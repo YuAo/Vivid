@@ -20,13 +20,13 @@ These are stored as `CIVector`s in an `NSArray`, with normalized X and Y coordin
 
 The defaults are `[(0,0), (0.5,0.5), (1,1)]`
 
-__This filter only works in a sRGB working color space.__
+*This filter may not work well in the default light-linear working color space. Use `kCIContextWorkingColorSpace` key to specify a working color space when creating the `CIContext` object.*
 
 ####YUCIColorLookup
 
 Uses a color lookup table (LUT) to remap the colors in an image. The default LUT can be found at `Sources/YUCIColorLookupTableDefault.png`
 
-__This filter only works in a sRGB working color space.__
+*This filter may not work well in the default light-linear working color space. Use `kCIContextWorkingColorSpace` key to specify a working color space when creating the `CIContext` object.*
 
 ##Utilities
 
