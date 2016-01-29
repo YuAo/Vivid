@@ -20,6 +20,8 @@ These are stored as `CIVector`s in an `NSArray`, with normalized X and Y coordin
 
 The defaults are `[(0,0), (0.5,0.5), (1,1)]`
 
+__This filter only works in a sRGB working color space.__
+
 ####YUCIColorLookup
 
 Uses a color lookup table (LUT) to remap the colors in an image. The default LUT can be found at `Sources/YUCIColorLookupTableDefault.png`
