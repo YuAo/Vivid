@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'Vivid'
-  s.version      = '1.2'
+  s.version      = '0.1'
   s.author       = { 'YuAo' => 'me@imyuao.com' }
   s.homepage     = 'https://github.com/YuAo/Vivid'
   s.summary      = 'Filters and utilities for Core Image'
