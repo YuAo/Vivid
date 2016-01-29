@@ -1,5 +1,9 @@
 # Vivid
 
+![CocoaPods Platform](https://img.shields.io/cocoapods/p/Vivid.svg?style=flat-square)
+![CocoaPods Version](https://img.shields.io/cocoapods/v/Vivid.svg?style=flat-square)
+![CocoaPods License](https://img.shields.io/cocoapods/l/Vivid.svg?style=flat-square)
+
 A set of custom filters and utilities for Apple's [Core Image](https://developer.apple.com/library/mac/documentation/GraphicsImaging/Conceptual/CoreImaging/ci_intro/ci_intro.html) framework.
 
 Available on both OS X and iOS.
