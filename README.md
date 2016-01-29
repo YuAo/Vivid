@@ -1,2 +1,2 @@
 # Vivid
-Filters and utilities for Core Image
+A set of custom filters and utilities for Apple's `Core Image` framework.
