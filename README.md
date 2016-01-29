@@ -20,13 +20,13 @@ The defaults are `[(0,0), (0.5,0.5), (1,1)]`
 
 Uses a color lookup table (LUT) to remap the colors in an image. The default LUT can be found at `Sources/YUCIColorLookupTableDefault.png`
 
-__This filter only works in an sRGB working color space.__
+__This filter only works in a sRGB working color space.__
 
 ##Utilities
 
 ####YUCIFilterConstructor
 
-A singleton that confroms to `CIFilterConstructor` protocol.
+A singleton that conforms to `CIFilterConstructor` protocol.
 
 Can be used in `+[CIFilter registerFilterName:constructor:classAttributes:]` to register a `CIFilter`. This filter constructor simply assume that the `filterName` is the class name of the custom `CIFilter` and calls `[[FilterClass alloc] init]` to construct a filter.
 
