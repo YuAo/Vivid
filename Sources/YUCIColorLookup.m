@@ -18,7 +18,8 @@
             if ([CIFilter respondsToSelector:@selector(registerFilterName:constructor:classAttributes:)]) {
                 [CIFilter registerFilterName:NSStringFromClass([YUCIColorLookup class])
                                  constructor:[YUCIFilterConstructor constructor]
-                             classAttributes:@{kCIAttributeFilterCategories: @[kCICategoryStillImage,kCICategoryVideo,kCICategoryColorEffect,kCICategoryInterlaced,kCICategoryNonSquarePixels]}];
+                             classAttributes:@{kCIAttributeFilterCategories: @[kCICategoryStillImage,kCICategoryVideo,kCICategoryColorEffect,kCICategoryInterlaced,kCICategoryNonSquarePixels],
+                                               kCIAttributeFilterDisplayName: @"Color Lookup"}];
             }
         }
     });

@@ -19,9 +19,10 @@ class MainWindowController: NSWindowController {
         
         self.filtersToolbarItem.minSize.height = 32
         self.filtersPopUpButton.menu?.removeAllItems()
-        for filterItem in FilterStore.filters {
-            let menuItem = NSMenuItem(title: filterItem.name, action: nil, keyEquivalent: "")
-            menuItem.representedObject = filterItem.filter
+        for filter in FilterStore.filters {
+            let filterName = (filter?.attributes[kCIAttributeFilterDisplayName] as? String) ?? "Unknown"
+            let menuItem = NSMenuItem(title: (filter != nil ? filterName : "No Filter"), action: nil, keyEquivalent: "")
+            menuItem.representedObject = filter
             self.filtersPopUpButton.menu?.addItem(menuItem)
         }
     }
