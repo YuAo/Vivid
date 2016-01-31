@@ -1,6 +1,8 @@
 
 kernel vec4 filterKernel(sampler inputImage, sampler inputLUT, float intensity) {
     vec4 textureColor = sample(inputImage,samplerCoord(inputImage));
+    textureColor = clamp(textureColor, vec4(0.0), vec4(1.0));
+
     float blueColor = textureColor.b * 63.0;
 
     vec2 quad1;
