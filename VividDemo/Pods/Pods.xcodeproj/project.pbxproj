@@ -1,0 +1,595 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		05F812921C75A38AEBA63D6B00282626 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CA6EBC2E57D96052268211209D6AA52 /* Cocoa.framework */; };
+		1CC9CBB01E9CEBC2E9A1E4AC873F983E /* YUCIFilterConstructor.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2FA11D031BEDF0C5AB8A22588BBBF1 /* YUCIFilterConstructor.m */; };
+		2B9EF3E03257B566F8DC7FF81213504F /* Pods-VividDemo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 805F26DBC68B3A99BF1BAA08685987FE /* Pods-VividDemo-dummy.m */; };
+		30C752BB03D39E7235E62DCB7B8AA975 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CA6EBC2E57D96052268211209D6AA52 /* Cocoa.framework */; };
+		32DEB1DF148FD93240080A14E15C22EE /* Vivid-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 61239FE9C0E9E544789E953C2A083E1B /* Vivid-dummy.m */; };
+		35DBB42AC9B09592B4814E7BD911602C /* YUCIRGBToneCurve.cikernel in Resources */ = {isa = PBXBuildFile; fileRef = A31E41CEDD5C252C931DE4799C8A7AC6 /* YUCIRGBToneCurve.cikernel */; };
+		40E75B9DDA1622F7B7E5889E3A43AE86 /* Pods-VividDemo-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 787B24893994DD74294C7EF5F14D8106 /* Pods-VividDemo-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4E56AFFD899819532C76985D8AD09B64 /* YUCIRGBToneCurve.m in Sources */ = {isa = PBXBuildFile; fileRef = C2375FDCE4196F1D3210BE52C8AB843E /* YUCIRGBToneCurve.m */; };
+		5DA8E88BE994B72A0BB4723B62676CF4 /* YUCIColorLookup.cikernel in Resources */ = {isa = PBXBuildFile; fileRef = 72F50FA82116B8EA99202EB40113B193 /* YUCIColorLookup.cikernel */; };
+		8466FA646F73F0BF1BF59213494DEBCE /* YUCIRGBToneCurve.h in Headers */ = {isa = PBXBuildFile; fileRef = 65DB7D74B1C23DB34B82F8E9356CEC27 /* YUCIRGBToneCurve.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		956415B50C3D89F4429817D50B8630D3 /* YUCIMetalUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 563B85514150B6FEA8CA2DF3AE662B28 /* YUCIMetalUtilities.m */; };
+		A1CF74DE64B498F32E0EC674D50CCECE /* YUCIMetalUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = AF76354A7B6D0BCC1F63980520A8C1D2 /* YUCIMetalUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B7E7E721281CF7EF5C285DC63DE79D9F /* YUCIColorLookupTableDefault.png in Resources */ = {isa = PBXBuildFile; fileRef = D1F12FE5EE870393E43D22116C45137A /* YUCIColorLookupTableDefault.png */; };
+		DACACD9CA18E373EE1E0DE27374083C9 /* YUCIColorLookup.h in Headers */ = {isa = PBXBuildFile; fileRef = B36EECF12A0D18291C10632DB8D07748 /* YUCIColorLookup.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E274515A9C62C04F5592001501F18BF0 /* YUCIFilterConstructor.h in Headers */ = {isa = PBXBuildFile; fileRef = BFACC80D18F5972110C5F2EE46F018C0 /* YUCIFilterConstructor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E5D91AD56E3E433B71C05A8EB77846AD /* Vivid-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A28C48F2D68ADD72543B3C01F2DD9DAE /* Vivid-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FA7F36CEAC7BDD05A626D386BE6CBF85 /* YUCIColorLookup.m in Sources */ = {isa = PBXBuildFile; fileRef = 76FAEB140EB44487ECF58162AB49CEAB /* YUCIColorLookup.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D3E6D9683534C44BC270FD4FC4B27D90 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4AD8F6386D9B4FFA8DB12DFACC2D81AC;
+			remoteInfo = Vivid;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1CA6EBC2E57D96052268211209D6AA52 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
+		21F0311B5286395AC500A1BBDC55FC5E /* Pods-VividDemo-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-VividDemo-acknowledgements.plist"; sourceTree = "<group>"; };
+		42FC7235710F8DB5024B80904A34F144 /* Pods-VividDemo-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-VividDemo-frameworks.sh"; sourceTree = "<group>"; };
+		50787BDBDB06B53726CB0398D3A95D94 /* Vivid.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Vivid.modulemap; sourceTree = "<group>"; };
+		563B85514150B6FEA8CA2DF3AE662B28 /* YUCIMetalUtilities.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = YUCIMetalUtilities.m; sourceTree = "<group>"; };
+		5C443A47AC30E182967E99BCDA22AEC2 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		61239FE9C0E9E544789E953C2A083E1B /* Vivid-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Vivid-dummy.m"; sourceTree = "<group>"; };
+		65DB7D74B1C23DB34B82F8E9356CEC27 /* YUCIRGBToneCurve.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = YUCIRGBToneCurve.h; sourceTree = "<group>"; };
+		6B81CE93511C440F6636DDA968DE0C1B /* Pods-VividDemo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-VividDemo-acknowledgements.markdown"; sourceTree = "<group>"; };
+		72116FAF477C5ADB5EAF44DF05B74703 /* Pods-VividDemo.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-VividDemo.modulemap"; sourceTree = "<group>"; };
+		72F50FA82116B8EA99202EB40113B193 /* YUCIColorLookup.cikernel */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = YUCIColorLookup.cikernel; sourceTree = "<group>"; };
+		76FAEB140EB44487ECF58162AB49CEAB /* YUCIColorLookup.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = YUCIColorLookup.m; sourceTree = "<group>"; };
+		7799B592CEDCC55480D452D4CF338D44 /* Vivid.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Vivid.xcconfig; sourceTree = "<group>"; };
+		787B24893994DD74294C7EF5F14D8106 /* Pods-VividDemo-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-VividDemo-umbrella.h"; sourceTree = "<group>"; };
+		7A23AE2EA6CBC69355A70D8162EF8F60 /* Pods_VividDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VividDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A2FA11D031BEDF0C5AB8A22588BBBF1 /* YUCIFilterConstructor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = YUCIFilterConstructor.m; sourceTree = "<group>"; };
+		805F26DBC68B3A99BF1BAA08685987FE /* Pods-VividDemo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-VividDemo-dummy.m"; sourceTree = "<group>"; };
+		A28C48F2D68ADD72543B3C01F2DD9DAE /* Vivid-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Vivid-umbrella.h"; sourceTree = "<group>"; };
+		A31E41CEDD5C252C931DE4799C8A7AC6 /* YUCIRGBToneCurve.cikernel */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = YUCIRGBToneCurve.cikernel; sourceTree = "<group>"; };
+		AF76354A7B6D0BCC1F63980520A8C1D2 /* YUCIMetalUtilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = YUCIMetalUtilities.h; sourceTree = "<group>"; };
+		B1637963A76A89FC5F6E7AE176CA979F /* Pods-VividDemo-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-VividDemo-resources.sh"; sourceTree = "<group>"; };
+		B36EECF12A0D18291C10632DB8D07748 /* YUCIColorLookup.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = YUCIColorLookup.h; sourceTree = "<group>"; };
+		B73E569B20E750EFAEA273EA414EFA4F /* Vivid.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Vivid.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		BFACC80D18F5972110C5F2EE46F018C0 /* YUCIFilterConstructor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = YUCIFilterConstructor.h; sourceTree = "<group>"; };
+		C17699B67D0A6A7509A2B2762FDA0242 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C2375FDCE4196F1D3210BE52C8AB843E /* YUCIRGBToneCurve.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = YUCIRGBToneCurve.m; sourceTree = "<group>"; };
+		D1F12FE5EE870393E43D22116C45137A /* YUCIColorLookupTableDefault.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = YUCIColorLookupTableDefault.png; sourceTree = "<group>"; };
+		DE112607DDD7A2D98F673B0CF0E9E673 /* Pods-VividDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-VividDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		F3690774EE10480A5775F0474D1BA82D /* Pods-VividDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-VividDemo.release.xcconfig"; sourceTree = "<group>"; };
+		FC52E7E11E6041FAFCDE17B2E63BEF91 /* Vivid-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Vivid-prefix.pch"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		28E133EEF1A60149FC71223C775EF4FC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05F812921C75A38AEBA63D6B00282626 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E817B3E374F86CB6001A55B66AE5D8D5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				30C752BB03D39E7235E62DCB7B8AA975 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1C95A8DAF491B902AC592C8FAC9B5C48 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				C17699B67D0A6A7509A2B2762FDA0242 /* Info.plist */,
+				50787BDBDB06B53726CB0398D3A95D94 /* Vivid.modulemap */,
+				7799B592CEDCC55480D452D4CF338D44 /* Vivid.xcconfig */,
+				61239FE9C0E9E544789E953C2A083E1B /* Vivid-dummy.m */,
+				FC52E7E11E6041FAFCDE17B2E63BEF91 /* Vivid-prefix.pch */,
+				A28C48F2D68ADD72543B3C01F2DD9DAE /* Vivid-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "VividDemo/Pods/Target Support Files/Vivid";
+			sourceTree = "<group>";
+		};
+		1D8575D42140D259007153E430DA04F3 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3F0125F12C5C4D073816356002EF2145 /* Vivid */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		1DD9B3883F77A6AC02E681DDEB4796F1 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				B36EECF12A0D18291C10632DB8D07748 /* YUCIColorLookup.h */,
+				76FAEB140EB44487ECF58162AB49CEAB /* YUCIColorLookup.m */,
+				BFACC80D18F5972110C5F2EE46F018C0 /* YUCIFilterConstructor.h */,
+				7A2FA11D031BEDF0C5AB8A22588BBBF1 /* YUCIFilterConstructor.m */,
+				AF76354A7B6D0BCC1F63980520A8C1D2 /* YUCIMetalUtilities.h */,
+				563B85514150B6FEA8CA2DF3AE662B28 /* YUCIMetalUtilities.m */,
+				65DB7D74B1C23DB34B82F8E9356CEC27 /* YUCIRGBToneCurve.h */,
+				C2375FDCE4196F1D3210BE52C8AB843E /* YUCIRGBToneCurve.m */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		28C17CEF104526ACA07B6EEE217EC43E /* OS X */ = {
+			isa = PBXGroup;
+			children = (
+				1CA6EBC2E57D96052268211209D6AA52 /* Cocoa.framework */,
+			);
+			name = "OS X";
+			sourceTree = "<group>";
+		};
+		39E9EE8210D861DFD82346C1F5EB7218 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				28C17CEF104526ACA07B6EEE217EC43E /* OS X */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3F0125F12C5C4D073816356002EF2145 /* Vivid */ = {
+			isa = PBXGroup;
+			children = (
+				9BF64219D070E73F1AECDA1D0ED99898 /* Resources */,
+				1DD9B3883F77A6AC02E681DDEB4796F1 /* Sources */,
+				1C95A8DAF491B902AC592C8FAC9B5C48 /* Support Files */,
+			);
+			name = Vivid;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		68E352B0317ADBB0D2159C73D808D061 /* Pods-VividDemo */ = {
+			isa = PBXGroup;
+			children = (
+				5C443A47AC30E182967E99BCDA22AEC2 /* Info.plist */,
+				72116FAF477C5ADB5EAF44DF05B74703 /* Pods-VividDemo.modulemap */,
+				6B81CE93511C440F6636DDA968DE0C1B /* Pods-VividDemo-acknowledgements.markdown */,
+				21F0311B5286395AC500A1BBDC55FC5E /* Pods-VividDemo-acknowledgements.plist */,
+				805F26DBC68B3A99BF1BAA08685987FE /* Pods-VividDemo-dummy.m */,
+				42FC7235710F8DB5024B80904A34F144 /* Pods-VividDemo-frameworks.sh */,
+				B1637963A76A89FC5F6E7AE176CA979F /* Pods-VividDemo-resources.sh */,
+				787B24893994DD74294C7EF5F14D8106 /* Pods-VividDemo-umbrella.h */,
+				DE112607DDD7A2D98F673B0CF0E9E673 /* Pods-VividDemo.debug.xcconfig */,
+				F3690774EE10480A5775F0474D1BA82D /* Pods-VividDemo.release.xcconfig */,
+			);
+			name = "Pods-VividDemo";
+			path = "Target Support Files/Pods-VividDemo";
+			sourceTree = "<group>";
+		};
+		6F393A8E4E09FFD93009750A8AB1E62D /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				72F50FA82116B8EA99202EB40113B193 /* YUCIColorLookup.cikernel */,
+				D1F12FE5EE870393E43D22116C45137A /* YUCIColorLookupTableDefault.png */,
+				A31E41CEDD5C252C931DE4799C8A7AC6 /* YUCIRGBToneCurve.cikernel */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
+				1D8575D42140D259007153E430DA04F3 /* Development Pods */,
+				39E9EE8210D861DFD82346C1F5EB7218 /* Frameworks */,
+				BA1D2650C491DBE6982CAD0EC8236F23 /* Products */,
+				E56A3C8C463BCB22AA0B7A557E0B0AD3 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		9BF64219D070E73F1AECDA1D0ED99898 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6F393A8E4E09FFD93009750A8AB1E62D /* Sources */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		BA1D2650C491DBE6982CAD0EC8236F23 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7A23AE2EA6CBC69355A70D8162EF8F60 /* Pods_VividDemo.framework */,
+				B73E569B20E750EFAEA273EA414EFA4F /* Vivid.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E56A3C8C463BCB22AA0B7A557E0B0AD3 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				68E352B0317ADBB0D2159C73D808D061 /* Pods-VividDemo */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		2288D5488D4B03723C6BBCE4A5E49D6F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E5D91AD56E3E433B71C05A8EB77846AD /* Vivid-umbrella.h in Headers */,
+				DACACD9CA18E373EE1E0DE27374083C9 /* YUCIColorLookup.h in Headers */,
+				E274515A9C62C04F5592001501F18BF0 /* YUCIFilterConstructor.h in Headers */,
+				A1CF74DE64B498F32E0EC674D50CCECE /* YUCIMetalUtilities.h in Headers */,
+				8466FA646F73F0BF1BF59213494DEBCE /* YUCIRGBToneCurve.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8FE6A1C95662077F05C38E54CB7C8926 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				40E75B9DDA1622F7B7E5889E3A43AE86 /* Pods-VividDemo-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		4AD8F6386D9B4FFA8DB12DFACC2D81AC /* Vivid */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2FF624836D9C26063F9E86742113BF64 /* Build configuration list for PBXNativeTarget "Vivid" */;
+			buildPhases = (
+				91C735C09E1C48116E1B5A0F44ADF1CC /* Sources */,
+				E817B3E374F86CB6001A55B66AE5D8D5 /* Frameworks */,
+				2288D5488D4B03723C6BBCE4A5E49D6F /* Headers */,
+				8BD64D666F398F47622CA0AC777BB4CB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Vivid;
+			productName = Vivid;
+			productReference = B73E569B20E750EFAEA273EA414EFA4F /* Vivid.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		B8D62FE9F5789A95A361AB78CEC17130 /* Pods-VividDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2D7B51BACA3FC1B1E4BE6B3E02CE8B85 /* Build configuration list for PBXNativeTarget "Pods-VividDemo" */;
+			buildPhases = (
+				7EEDD68100C621137725CCA595106599 /* Sources */,
+				28E133EEF1A60149FC71223C775EF4FC /* Frameworks */,
+				8FE6A1C95662077F05C38E54CB7C8926 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				53547B5056ACD2DE24431970E6779267 /* PBXTargetDependency */,
+			);
+			name = "Pods-VividDemo";
+			productName = "Pods-VividDemo";
+			productReference = 7A23AE2EA6CBC69355A70D8162EF8F60 /* Pods_VividDemo.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = BA1D2650C491DBE6982CAD0EC8236F23 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B8D62FE9F5789A95A361AB78CEC17130 /* Pods-VividDemo */,
+				4AD8F6386D9B4FFA8DB12DFACC2D81AC /* Vivid */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8BD64D666F398F47622CA0AC777BB4CB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5DA8E88BE994B72A0BB4723B62676CF4 /* YUCIColorLookup.cikernel in Resources */,
+				B7E7E721281CF7EF5C285DC63DE79D9F /* YUCIColorLookupTableDefault.png in Resources */,
+				35DBB42AC9B09592B4814E7BD911602C /* YUCIRGBToneCurve.cikernel in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7EEDD68100C621137725CCA595106599 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2B9EF3E03257B566F8DC7FF81213504F /* Pods-VividDemo-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		91C735C09E1C48116E1B5A0F44ADF1CC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				32DEB1DF148FD93240080A14E15C22EE /* Vivid-dummy.m in Sources */,
+				FA7F36CEAC7BDD05A626D386BE6CBF85 /* YUCIColorLookup.m in Sources */,
+				1CC9CBB01E9CEBC2E9A1E4AC873F983E /* YUCIFilterConstructor.m in Sources */,
+				956415B50C3D89F4429817D50B8630D3 /* YUCIMetalUtilities.m in Sources */,
+				4E56AFFD899819532C76985D8AD09B64 /* YUCIRGBToneCurve.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		53547B5056ACD2DE24431970E6779267 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Vivid;
+			target = 4AD8F6386D9B4FFA8DB12DFACC2D81AC /* Vivid */;
+			targetProxy = D3E6D9683534C44BC270FD4FC4B27D90 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		4907EAB0868E73CCC72FCDDB6921349C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4C24981BE38B4BBE178629588C0DDD11 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7799B592CEDCC55480D452D4CF338D44 /* Vivid.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_VERSION = A;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Vivid/Vivid-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Vivid/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MODULEMAP_FILE = "Target Support Files/Vivid/Vivid.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = Vivid;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		69C012360A4D0A1DA8FA7EB6E8924B17 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		7B7E0F0091E07E22F85ECE49E534A135 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DE112607DDD7A2D98F673B0CF0E9E673 /* Pods-VividDemo.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_VERSION = A;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-VividDemo/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MODULEMAP_FILE = "Target Support Files/Pods-VividDemo/Pods-VividDemo.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_VividDemo;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		9390D0FF2A5B5CE8E8E427FCA6D363BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7799B592CEDCC55480D452D4CF338D44 /* Vivid.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_VERSION = A;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Vivid/Vivid-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Vivid/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MODULEMAP_FILE = "Target Support Files/Vivid/Vivid.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = Vivid;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		ED6140EAC549BFAA2FEAB0E034455143 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F3690774EE10480A5775F0474D1BA82D /* Pods-VividDemo.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_VERSION = A;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-VividDemo/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MODULEMAP_FILE = "Target Support Files/Pods-VividDemo/Pods-VividDemo.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_VividDemo;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D7B51BACA3FC1B1E4BE6B3E02CE8B85 /* Build configuration list for PBXNativeTarget "Pods-VividDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7B7E0F0091E07E22F85ECE49E534A135 /* Debug */,
+				ED6140EAC549BFAA2FEAB0E034455143 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				69C012360A4D0A1DA8FA7EB6E8924B17 /* Debug */,
+				4907EAB0868E73CCC72FCDDB6921349C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2FF624836D9C26063F9E86742113BF64 /* Build configuration list for PBXNativeTarget "Vivid" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9390D0FF2A5B5CE8E8E427FCA6D363BA /* Debug */,
+				4C24981BE38B4BBE178629588C0DDD11 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
