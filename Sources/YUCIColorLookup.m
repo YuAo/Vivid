@@ -7,8 +7,22 @@
 //
 
 #import "YUCIColorLookup.h"
+#import "YUCIFilterConstructor.h"
 
 @implementation YUCIColorLookup
+
++ (void)load {
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        @autoreleasepool {
+            if ([CIFilter respondsToSelector:@selector(registerFilterName:constructor:classAttributes:)]) {
+                [CIFilter registerFilterName:NSStringFromClass([YUCIColorLookup class])
+                                 constructor:[YUCIFilterConstructor constructor]
+                             classAttributes:@{kCIAttributeFilterCategories: @[kCICategoryStillImage,kCICategoryVideo,kCICategoryColorEffect,kCICategoryInterlaced,kCICategoryNonSquarePixels]}];
+            }
+        }
+    });
+}
 
 - (NSNumber *)inputIntensity {
     if (!_inputIntensity) {
