@@ -8,22 +8,25 @@
 
 /* Begin PBXBuildFile section */
 		05F812921C75A38AEBA63D6B00282626 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CA6EBC2E57D96052268211209D6AA52 /* Cocoa.framework */; };
-		1CC9CBB01E9CEBC2E9A1E4AC873F983E /* YUCIFilterConstructor.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2FA11D031BEDF0C5AB8A22588BBBF1 /* YUCIFilterConstructor.m */; };
 		2B9EF3E03257B566F8DC7FF81213504F /* Pods-VividDemo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 805F26DBC68B3A99BF1BAA08685987FE /* Pods-VividDemo-dummy.m */; };
+		2DBEF9FFF88130580CF3AB75CA5E6C86 /* YUCIRGBToneCurve.m in Sources */ = {isa = PBXBuildFile; fileRef = DB752CA103CF40ED111D842047DD323B /* YUCIRGBToneCurve.m */; };
 		30C752BB03D39E7235E62DCB7B8AA975 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CA6EBC2E57D96052268211209D6AA52 /* Cocoa.framework */; };
-		32DEB1DF148FD93240080A14E15C22EE /* Vivid-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 61239FE9C0E9E544789E953C2A083E1B /* Vivid-dummy.m */; };
-		35DBB42AC9B09592B4814E7BD911602C /* YUCIRGBToneCurve.cikernel in Resources */ = {isa = PBXBuildFile; fileRef = A31E41CEDD5C252C931DE4799C8A7AC6 /* YUCIRGBToneCurve.cikernel */; };
+		32AEC06B8FD5EB72144AFAF141DCF7E7 /* YUCIColorLookupTableDefault.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E68FC854D32904770A49609AF444708 /* YUCIColorLookupTableDefault.png */; };
+		32C173B85657DBE66EBD2E957E8C8CBC /* YUCIMetalUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 902A3D3919EA2A2F5781990ED69CB73E /* YUCIMetalUtilities.m */; };
+		384A0F6BD931DC287F8273347767C022 /* YUCIBilateralFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = EEC627319E1812BE7F620791A0F48EEA /* YUCIBilateralFilter.m */; };
+		3B1E1F844C2E47A5BA0D894FE4AE9B61 /* YUCIFilterConstructor.m in Sources */ = {isa = PBXBuildFile; fileRef = DB72D187C13DF05B01EC638BA247FDAC /* YUCIFilterConstructor.m */; };
 		40E75B9DDA1622F7B7E5889E3A43AE86 /* Pods-VividDemo-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 787B24893994DD74294C7EF5F14D8106 /* Pods-VividDemo-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4E56AFFD899819532C76985D8AD09B64 /* YUCIRGBToneCurve.m in Sources */ = {isa = PBXBuildFile; fileRef = C2375FDCE4196F1D3210BE52C8AB843E /* YUCIRGBToneCurve.m */; };
-		5DA8E88BE994B72A0BB4723B62676CF4 /* YUCIColorLookup.cikernel in Resources */ = {isa = PBXBuildFile; fileRef = 72F50FA82116B8EA99202EB40113B193 /* YUCIColorLookup.cikernel */; };
-		8466FA646F73F0BF1BF59213494DEBCE /* YUCIRGBToneCurve.h in Headers */ = {isa = PBXBuildFile; fileRef = 65DB7D74B1C23DB34B82F8E9356CEC27 /* YUCIRGBToneCurve.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		956415B50C3D89F4429817D50B8630D3 /* YUCIMetalUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 563B85514150B6FEA8CA2DF3AE662B28 /* YUCIMetalUtilities.m */; };
-		A1CF74DE64B498F32E0EC674D50CCECE /* YUCIMetalUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = AF76354A7B6D0BCC1F63980520A8C1D2 /* YUCIMetalUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B7E7E721281CF7EF5C285DC63DE79D9F /* YUCIColorLookupTableDefault.png in Resources */ = {isa = PBXBuildFile; fileRef = D1F12FE5EE870393E43D22116C45137A /* YUCIColorLookupTableDefault.png */; };
-		DACACD9CA18E373EE1E0DE27374083C9 /* YUCIColorLookup.h in Headers */ = {isa = PBXBuildFile; fileRef = B36EECF12A0D18291C10632DB8D07748 /* YUCIColorLookup.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E274515A9C62C04F5592001501F18BF0 /* YUCIFilterConstructor.h in Headers */ = {isa = PBXBuildFile; fileRef = BFACC80D18F5972110C5F2EE46F018C0 /* YUCIFilterConstructor.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E5D91AD56E3E433B71C05A8EB77846AD /* Vivid-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A28C48F2D68ADD72543B3C01F2DD9DAE /* Vivid-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FA7F36CEAC7BDD05A626D386BE6CBF85 /* YUCIColorLookup.m in Sources */ = {isa = PBXBuildFile; fileRef = 76FAEB140EB44487ECF58162AB49CEAB /* YUCIColorLookup.m */; };
+		4922D6E6C35A98911806DFF75D9013E2 /* YUCIRGBToneCurve.cikernel in Resources */ = {isa = PBXBuildFile; fileRef = 56F6FCDCDA897EEF2A43388BBEBED0A0 /* YUCIRGBToneCurve.cikernel */; };
+		494D9DC29BAF1CAB6A4D31F811BF5C18 /* YUCIColorLookup.h in Headers */ = {isa = PBXBuildFile; fileRef = C2960B7F7C8B40EB5A18D9C8C5551D51 /* YUCIColorLookup.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5F4E27F3012F8D837EC3D6F8EE20BD6D /* YUCIBilateralFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = 9EFB7731CC96F5CE3D81B6A450F683B2 /* YUCIBilateralFilter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7A9863A88988FD96930E698D261A2B4E /* YUCIRGBToneCurve.h in Headers */ = {isa = PBXBuildFile; fileRef = 1670219A99E9CBD8650BD480FCB5F249 /* YUCIRGBToneCurve.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7DF24AA9DE9DE39AFBA6F9DC9D296A52 /* YUCIBilateralFilter.cikernel in Resources */ = {isa = PBXBuildFile; fileRef = 565859774ACADC659C19AA3BF993548C /* YUCIBilateralFilter.cikernel */; };
+		7E6111E935C93CD3BEC7329723D8132B /* YUCIColorLookup.cikernel in Resources */ = {isa = PBXBuildFile; fileRef = E5CFE7268448DF1AF18AE75A32776B86 /* YUCIColorLookup.cikernel */; };
+		8F6636FB2F12A570D8F5F9F9F901CFD6 /* YUCIFilterConstructor.h in Headers */ = {isa = PBXBuildFile; fileRef = 369C5AD8A29577190C62A2F1C53A2877 /* YUCIFilterConstructor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A10FEB4DB7B16D4451840B807B1A026D /* YUCIColorLookup.m in Sources */ = {isa = PBXBuildFile; fileRef = 60BBE7F65930F34327656F4202353A60 /* YUCIColorLookup.m */; };
+		C00F91222EEB0E445680718F9F2837B5 /* Vivid-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 22460B489E22EEF1BEDF95B48246FFC9 /* Vivid-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C91690D55ED68B2408947467FB6D8E36 /* Vivid-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A980BE6B568830B0132C4B6B55C7B35 /* Vivid-dummy.m */; };
+		D7F8392E3459B8097170C21B6553AECF /* YUCIMetalUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 00004A597F5CAF3365619D2749B4D4E9 /* YUCIMetalUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,37 +40,40 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		00004A597F5CAF3365619D2749B4D4E9 /* YUCIMetalUtilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = YUCIMetalUtilities.h; sourceTree = "<group>"; };
+		02859944F1E1D19BA67DF141D08EBA36 /* Vivid.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Vivid.modulemap; sourceTree = "<group>"; };
+		1670219A99E9CBD8650BD480FCB5F249 /* YUCIRGBToneCurve.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = YUCIRGBToneCurve.h; sourceTree = "<group>"; };
 		1CA6EBC2E57D96052268211209D6AA52 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
 		21F0311B5286395AC500A1BBDC55FC5E /* Pods-VividDemo-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-VividDemo-acknowledgements.plist"; sourceTree = "<group>"; };
+		22460B489E22EEF1BEDF95B48246FFC9 /* Vivid-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Vivid-umbrella.h"; sourceTree = "<group>"; };
+		2E13FCA2E25CD347E25600663A76E030 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		369C5AD8A29577190C62A2F1C53A2877 /* YUCIFilterConstructor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = YUCIFilterConstructor.h; sourceTree = "<group>"; };
+		3E68FC854D32904770A49609AF444708 /* YUCIColorLookupTableDefault.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = YUCIColorLookupTableDefault.png; sourceTree = "<group>"; };
 		42FC7235710F8DB5024B80904A34F144 /* Pods-VividDemo-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-VividDemo-frameworks.sh"; sourceTree = "<group>"; };
-		50787BDBDB06B53726CB0398D3A95D94 /* Vivid.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Vivid.modulemap; sourceTree = "<group>"; };
-		563B85514150B6FEA8CA2DF3AE662B28 /* YUCIMetalUtilities.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = YUCIMetalUtilities.m; sourceTree = "<group>"; };
+		4C917FC5A2900A164FE419FB79444029 /* Vivid.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Vivid.xcconfig; sourceTree = "<group>"; };
+		4E09F31BA3ACBD18365941623E97BD7A /* Vivid-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Vivid-prefix.pch"; sourceTree = "<group>"; };
+		565859774ACADC659C19AA3BF993548C /* YUCIBilateralFilter.cikernel */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = YUCIBilateralFilter.cikernel; sourceTree = "<group>"; };
+		56F6FCDCDA897EEF2A43388BBEBED0A0 /* YUCIRGBToneCurve.cikernel */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = YUCIRGBToneCurve.cikernel; sourceTree = "<group>"; };
 		5C443A47AC30E182967E99BCDA22AEC2 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		61239FE9C0E9E544789E953C2A083E1B /* Vivid-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Vivid-dummy.m"; sourceTree = "<group>"; };
-		65DB7D74B1C23DB34B82F8E9356CEC27 /* YUCIRGBToneCurve.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = YUCIRGBToneCurve.h; sourceTree = "<group>"; };
+		60BBE7F65930F34327656F4202353A60 /* YUCIColorLookup.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = YUCIColorLookup.m; sourceTree = "<group>"; };
 		6B81CE93511C440F6636DDA968DE0C1B /* Pods-VividDemo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-VividDemo-acknowledgements.markdown"; sourceTree = "<group>"; };
 		72116FAF477C5ADB5EAF44DF05B74703 /* Pods-VividDemo.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-VividDemo.modulemap"; sourceTree = "<group>"; };
-		72F50FA82116B8EA99202EB40113B193 /* YUCIColorLookup.cikernel */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = YUCIColorLookup.cikernel; sourceTree = "<group>"; };
-		76FAEB140EB44487ECF58162AB49CEAB /* YUCIColorLookup.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = YUCIColorLookup.m; sourceTree = "<group>"; };
-		7799B592CEDCC55480D452D4CF338D44 /* Vivid.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Vivid.xcconfig; sourceTree = "<group>"; };
 		787B24893994DD74294C7EF5F14D8106 /* Pods-VividDemo-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-VividDemo-umbrella.h"; sourceTree = "<group>"; };
 		7A23AE2EA6CBC69355A70D8162EF8F60 /* Pods_VividDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VividDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7A2FA11D031BEDF0C5AB8A22588BBBF1 /* YUCIFilterConstructor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = YUCIFilterConstructor.m; sourceTree = "<group>"; };
 		805F26DBC68B3A99BF1BAA08685987FE /* Pods-VividDemo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-VividDemo-dummy.m"; sourceTree = "<group>"; };
-		A28C48F2D68ADD72543B3C01F2DD9DAE /* Vivid-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Vivid-umbrella.h"; sourceTree = "<group>"; };
-		A31E41CEDD5C252C931DE4799C8A7AC6 /* YUCIRGBToneCurve.cikernel */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = YUCIRGBToneCurve.cikernel; sourceTree = "<group>"; };
-		AF76354A7B6D0BCC1F63980520A8C1D2 /* YUCIMetalUtilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = YUCIMetalUtilities.h; sourceTree = "<group>"; };
+		902A3D3919EA2A2F5781990ED69CB73E /* YUCIMetalUtilities.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = YUCIMetalUtilities.m; sourceTree = "<group>"; };
+		9A980BE6B568830B0132C4B6B55C7B35 /* Vivid-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Vivid-dummy.m"; sourceTree = "<group>"; };
+		9EFB7731CC96F5CE3D81B6A450F683B2 /* YUCIBilateralFilter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = YUCIBilateralFilter.h; sourceTree = "<group>"; };
 		B1637963A76A89FC5F6E7AE176CA979F /* Pods-VividDemo-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-VividDemo-resources.sh"; sourceTree = "<group>"; };
-		B36EECF12A0D18291C10632DB8D07748 /* YUCIColorLookup.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = YUCIColorLookup.h; sourceTree = "<group>"; };
 		B73E569B20E750EFAEA273EA414EFA4F /* Vivid.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Vivid.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		BFACC80D18F5972110C5F2EE46F018C0 /* YUCIFilterConstructor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = YUCIFilterConstructor.h; sourceTree = "<group>"; };
-		C17699B67D0A6A7509A2B2762FDA0242 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C2375FDCE4196F1D3210BE52C8AB843E /* YUCIRGBToneCurve.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = YUCIRGBToneCurve.m; sourceTree = "<group>"; };
-		D1F12FE5EE870393E43D22116C45137A /* YUCIColorLookupTableDefault.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = YUCIColorLookupTableDefault.png; sourceTree = "<group>"; };
+		C2960B7F7C8B40EB5A18D9C8C5551D51 /* YUCIColorLookup.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = YUCIColorLookup.h; sourceTree = "<group>"; };
+		DB72D187C13DF05B01EC638BA247FDAC /* YUCIFilterConstructor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = YUCIFilterConstructor.m; sourceTree = "<group>"; };
+		DB752CA103CF40ED111D842047DD323B /* YUCIRGBToneCurve.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = YUCIRGBToneCurve.m; sourceTree = "<group>"; };
 		DE112607DDD7A2D98F673B0CF0E9E673 /* Pods-VividDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-VividDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		E5CFE7268448DF1AF18AE75A32776B86 /* YUCIColorLookup.cikernel */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = YUCIColorLookup.cikernel; sourceTree = "<group>"; };
+		EEC627319E1812BE7F620791A0F48EEA /* YUCIBilateralFilter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = YUCIBilateralFilter.m; sourceTree = "<group>"; };
 		F3690774EE10480A5775F0474D1BA82D /* Pods-VividDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-VividDemo.release.xcconfig"; sourceTree = "<group>"; };
-		FC52E7E11E6041FAFCDE17B2E63BEF91 /* Vivid-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Vivid-prefix.pch"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,41 +96,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1C95A8DAF491B902AC592C8FAC9B5C48 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				C17699B67D0A6A7509A2B2762FDA0242 /* Info.plist */,
-				50787BDBDB06B53726CB0398D3A95D94 /* Vivid.modulemap */,
-				7799B592CEDCC55480D452D4CF338D44 /* Vivid.xcconfig */,
-				61239FE9C0E9E544789E953C2A083E1B /* Vivid-dummy.m */,
-				FC52E7E11E6041FAFCDE17B2E63BEF91 /* Vivid-prefix.pch */,
-				A28C48F2D68ADD72543B3C01F2DD9DAE /* Vivid-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "VividDemo/Pods/Target Support Files/Vivid";
-			sourceTree = "<group>";
-		};
 		1D8575D42140D259007153E430DA04F3 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				3F0125F12C5C4D073816356002EF2145 /* Vivid */,
+				7A313B738CAE8E9DD08207E90F2F502E /* Vivid */,
 			);
 			name = "Development Pods";
-			sourceTree = "<group>";
-		};
-		1DD9B3883F77A6AC02E681DDEB4796F1 /* Sources */ = {
-			isa = PBXGroup;
-			children = (
-				B36EECF12A0D18291C10632DB8D07748 /* YUCIColorLookup.h */,
-				76FAEB140EB44487ECF58162AB49CEAB /* YUCIColorLookup.m */,
-				BFACC80D18F5972110C5F2EE46F018C0 /* YUCIFilterConstructor.h */,
-				7A2FA11D031BEDF0C5AB8A22588BBBF1 /* YUCIFilterConstructor.m */,
-				AF76354A7B6D0BCC1F63980520A8C1D2 /* YUCIMetalUtilities.h */,
-				563B85514150B6FEA8CA2DF3AE662B28 /* YUCIMetalUtilities.m */,
-				65DB7D74B1C23DB34B82F8E9356CEC27 /* YUCIRGBToneCurve.h */,
-				C2375FDCE4196F1D3210BE52C8AB843E /* YUCIRGBToneCurve.m */,
-			);
-			path = Sources;
 			sourceTree = "<group>";
 		};
 		28C17CEF104526ACA07B6EEE217EC43E /* OS X */ = {
@@ -143,15 +120,18 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		3F0125F12C5C4D073816356002EF2145 /* Vivid */ = {
+		435202112ADC72496A5D98AA3E5B4A38 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				9BF64219D070E73F1AECDA1D0ED99898 /* Resources */,
-				1DD9B3883F77A6AC02E681DDEB4796F1 /* Sources */,
-				1C95A8DAF491B902AC592C8FAC9B5C48 /* Support Files */,
+				2E13FCA2E25CD347E25600663A76E030 /* Info.plist */,
+				02859944F1E1D19BA67DF141D08EBA36 /* Vivid.modulemap */,
+				4C917FC5A2900A164FE419FB79444029 /* Vivid.xcconfig */,
+				9A980BE6B568830B0132C4B6B55C7B35 /* Vivid-dummy.m */,
+				4E09F31BA3ACBD18365941623E97BD7A /* Vivid-prefix.pch */,
+				22460B489E22EEF1BEDF95B48246FFC9 /* Vivid-umbrella.h */,
 			);
-			name = Vivid;
-			path = ../..;
+			name = "Support Files";
+			path = "VividDemo/Pods/Target Support Files/Vivid";
 			sourceTree = "<group>";
 		};
 		68E352B0317ADBB0D2159C73D808D061 /* Pods-VividDemo */ = {
@@ -172,14 +152,15 @@
 			path = "Target Support Files/Pods-VividDemo";
 			sourceTree = "<group>";
 		};
-		6F393A8E4E09FFD93009750A8AB1E62D /* Sources */ = {
+		7A313B738CAE8E9DD08207E90F2F502E /* Vivid */ = {
 			isa = PBXGroup;
 			children = (
-				72F50FA82116B8EA99202EB40113B193 /* YUCIColorLookup.cikernel */,
-				D1F12FE5EE870393E43D22116C45137A /* YUCIColorLookupTableDefault.png */,
-				A31E41CEDD5C252C931DE4799C8A7AC6 /* YUCIRGBToneCurve.cikernel */,
+				9DE09EDDC8B1BA6E99701FA7F0116E46 /* Resources */,
+				C429704BFDC7A4DB65DC3AFD0BC056E2 /* Sources */,
+				435202112ADC72496A5D98AA3E5B4A38 /* Support Files */,
 			);
-			path = Sources;
+			name = Vivid;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
@@ -193,10 +174,21 @@
 			);
 			sourceTree = "<group>";
 		};
-		9BF64219D070E73F1AECDA1D0ED99898 /* Resources */ = {
+		992C012AA06D4E6C0C16DBA8A2C80ECB /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				6F393A8E4E09FFD93009750A8AB1E62D /* Sources */,
+				565859774ACADC659C19AA3BF993548C /* YUCIBilateralFilter.cikernel */,
+				E5CFE7268448DF1AF18AE75A32776B86 /* YUCIColorLookup.cikernel */,
+				3E68FC854D32904770A49609AF444708 /* YUCIColorLookupTableDefault.png */,
+				56F6FCDCDA897EEF2A43388BBEBED0A0 /* YUCIRGBToneCurve.cikernel */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		9DE09EDDC8B1BA6E99701FA7F0116E46 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				992C012AA06D4E6C0C16DBA8A2C80ECB /* Sources */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -210,6 +202,23 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		C429704BFDC7A4DB65DC3AFD0BC056E2 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				9EFB7731CC96F5CE3D81B6A450F683B2 /* YUCIBilateralFilter.h */,
+				EEC627319E1812BE7F620791A0F48EEA /* YUCIBilateralFilter.m */,
+				C2960B7F7C8B40EB5A18D9C8C5551D51 /* YUCIColorLookup.h */,
+				60BBE7F65930F34327656F4202353A60 /* YUCIColorLookup.m */,
+				369C5AD8A29577190C62A2F1C53A2877 /* YUCIFilterConstructor.h */,
+				DB72D187C13DF05B01EC638BA247FDAC /* YUCIFilterConstructor.m */,
+				00004A597F5CAF3365619D2749B4D4E9 /* YUCIMetalUtilities.h */,
+				902A3D3919EA2A2F5781990ED69CB73E /* YUCIMetalUtilities.m */,
+				1670219A99E9CBD8650BD480FCB5F249 /* YUCIRGBToneCurve.h */,
+				DB752CA103CF40ED111D842047DD323B /* YUCIRGBToneCurve.m */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
 		E56A3C8C463BCB22AA0B7A557E0B0AD3 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -221,23 +230,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		2288D5488D4B03723C6BBCE4A5E49D6F /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E5D91AD56E3E433B71C05A8EB77846AD /* Vivid-umbrella.h in Headers */,
-				DACACD9CA18E373EE1E0DE27374083C9 /* YUCIColorLookup.h in Headers */,
-				E274515A9C62C04F5592001501F18BF0 /* YUCIFilterConstructor.h in Headers */,
-				A1CF74DE64B498F32E0EC674D50CCECE /* YUCIMetalUtilities.h in Headers */,
-				8466FA646F73F0BF1BF59213494DEBCE /* YUCIRGBToneCurve.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		8FE6A1C95662077F05C38E54CB7C8926 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				40E75B9DDA1622F7B7E5889E3A43AE86 /* Pods-VividDemo-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E78266928B1793243C701486D2E2F098 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C00F91222EEB0E445680718F9F2837B5 /* Vivid-umbrella.h in Headers */,
+				5F4E27F3012F8D837EC3D6F8EE20BD6D /* YUCIBilateralFilter.h in Headers */,
+				494D9DC29BAF1CAB6A4D31F811BF5C18 /* YUCIColorLookup.h in Headers */,
+				8F6636FB2F12A570D8F5F9F9F901CFD6 /* YUCIFilterConstructor.h in Headers */,
+				D7F8392E3459B8097170C21B6553AECF /* YUCIMetalUtilities.h in Headers */,
+				7A9863A88988FD96930E698D261A2B4E /* YUCIRGBToneCurve.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,10 +258,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2FF624836D9C26063F9E86742113BF64 /* Build configuration list for PBXNativeTarget "Vivid" */;
 			buildPhases = (
-				91C735C09E1C48116E1B5A0F44ADF1CC /* Sources */,
+				00E9A7D67110591D738AB18CC0CFE3CF /* Sources */,
 				E817B3E374F86CB6001A55B66AE5D8D5 /* Frameworks */,
-				2288D5488D4B03723C6BBCE4A5E49D6F /* Headers */,
-				8BD64D666F398F47622CA0AC777BB4CB /* Resources */,
+				E78266928B1793243C701486D2E2F098 /* Headers */,
+				624678B94C0C652C70B0D734F1A9C986 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -308,36 +318,38 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		8BD64D666F398F47622CA0AC777BB4CB /* Resources */ = {
+		624678B94C0C652C70B0D734F1A9C986 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5DA8E88BE994B72A0BB4723B62676CF4 /* YUCIColorLookup.cikernel in Resources */,
-				B7E7E721281CF7EF5C285DC63DE79D9F /* YUCIColorLookupTableDefault.png in Resources */,
-				35DBB42AC9B09592B4814E7BD911602C /* YUCIRGBToneCurve.cikernel in Resources */,
+				7DF24AA9DE9DE39AFBA6F9DC9D296A52 /* YUCIBilateralFilter.cikernel in Resources */,
+				7E6111E935C93CD3BEC7329723D8132B /* YUCIColorLookup.cikernel in Resources */,
+				32AEC06B8FD5EB72144AFAF141DCF7E7 /* YUCIColorLookupTableDefault.png in Resources */,
+				4922D6E6C35A98911806DFF75D9013E2 /* YUCIRGBToneCurve.cikernel in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		00E9A7D67110591D738AB18CC0CFE3CF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C91690D55ED68B2408947467FB6D8E36 /* Vivid-dummy.m in Sources */,
+				384A0F6BD931DC287F8273347767C022 /* YUCIBilateralFilter.m in Sources */,
+				A10FEB4DB7B16D4451840B807B1A026D /* YUCIColorLookup.m in Sources */,
+				3B1E1F844C2E47A5BA0D894FE4AE9B61 /* YUCIFilterConstructor.m in Sources */,
+				32C173B85657DBE66EBD2E957E8C8CBC /* YUCIMetalUtilities.m in Sources */,
+				2DBEF9FFF88130580CF3AB75CA5E6C86 /* YUCIRGBToneCurve.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7EEDD68100C621137725CCA595106599 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				2B9EF3E03257B566F8DC7FF81213504F /* Pods-VividDemo-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		91C735C09E1C48116E1B5A0F44ADF1CC /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				32DEB1DF148FD93240080A14E15C22EE /* Vivid-dummy.m in Sources */,
-				FA7F36CEAC7BDD05A626D386BE6CBF85 /* YUCIColorLookup.m in Sources */,
-				1CC9CBB01E9CEBC2E9A1E4AC873F983E /* YUCIFilterConstructor.m in Sources */,
-				956415B50C3D89F4429817D50B8630D3 /* YUCIMetalUtilities.m in Sources */,
-				4E56AFFD899819532C76985D8AD09B64 /* YUCIRGBToneCurve.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,7 +404,7 @@
 		};
 		4C24981BE38B4BBE178629588C0DDD11 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7799B592CEDCC55480D452D4CF338D44 /* Vivid.xcconfig */;
+			baseConfigurationReference = 4C917FC5A2900A164FE419FB79444029 /* Vivid.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
@@ -497,7 +509,7 @@
 		};
 		9390D0FF2A5B5CE8E8E427FCA6D363BA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7799B592CEDCC55480D452D4CF338D44 /* Vivid.xcconfig */;
+			baseConfigurationReference = 4C917FC5A2900A164FE419FB79444029 /* Vivid.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;

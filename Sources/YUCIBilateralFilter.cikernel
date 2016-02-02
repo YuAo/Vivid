@@ -1,0 +1,77 @@
+
+kernel vec4 filterKernel(sampler inputImage, vec2 texelOffset, float distanceNormalizationFactor) {
+    const int GAUSSIAN_SAMPLES = 9;
+
+    vec2 blurCoordinates[GAUSSIAN_SAMPLES];
+
+    int multiplier = 0;
+    vec2 blurStep;
+    for (int i = 0; i < GAUSSIAN_SAMPLES; i++) {
+        multiplier = (i - ((GAUSSIAN_SAMPLES - 1) / 2));
+        blurStep = float(multiplier) * texelOffset;
+        blurCoordinates[i] = destCoord() + blurStep;
+    }
+
+    vec4 centralColor;
+    float gaussianWeightTotal;
+    vec4 sum;
+    vec4 sampleColor;
+    float distanceFromCentralColor;
+    float gaussianWeight;
+
+    centralColor = sample(inputImage,samplerTransform(inputImage, blurCoordinates[4]));
+    gaussianWeightTotal = 0.18;
+    sum = centralColor * 0.18;
+
+    sampleColor = sample(inputImage,samplerTransform(inputImage, blurCoordinates[0]));
+    distanceFromCentralColor = min(distance(centralColor, sampleColor) * distanceNormalizationFactor, 1.0);
+    gaussianWeight = 0.05 * (1.0 - distanceFromCentralColor);
+    gaussianWeightTotal += gaussianWeight;
+    sum += sampleColor * gaussianWeight;
+
+    sampleColor = sample(inputImage,samplerTransform(inputImage, blurCoordinates[1]));
+    distanceFromCentralColor = min(distance(centralColor, sampleColor) * distanceNormalizationFactor, 1.0);
+    gaussianWeight = 0.09 * (1.0 - distanceFromCentralColor);
+    gaussianWeightTotal += gaussianWeight;
+    sum += sampleColor * gaussianWeight;
+
+    sampleColor = sample(inputImage,samplerTransform(inputImage, blurCoordinates[2]));
+    distanceFromCentralColor = min(distance(centralColor, sampleColor) * distanceNormalizationFactor, 1.0);
+    gaussianWeight = 0.12 * (1.0 - distanceFromCentralColor);
+    gaussianWeightTotal += gaussianWeight;
+    sum += sampleColor * gaussianWeight;
+
+    sampleColor = sample(inputImage,samplerTransform(inputImage, blurCoordinates[3]));
+    distanceFromCentralColor = min(distance(centralColor, sampleColor) * distanceNormalizationFactor, 1.0);
+    gaussianWeight = 0.15 * (1.0 - distanceFromCentralColor);
+    gaussianWeightTotal += gaussianWeight;
+    sum += sampleColor * gaussianWeight;
+
+    sampleColor = sample(inputImage,samplerTransform(inputImage, blurCoordinates[5]));
+    distanceFromCentralColor = min(distance(centralColor, sampleColor) * distanceNormalizationFactor, 1.0);
+    gaussianWeight = 0.15 * (1.0 - distanceFromCentralColor);
+    gaussianWeightTotal += gaussianWeight;
+    sum += sampleColor * gaussianWeight;
+
+    sampleColor = sample(inputImage,samplerTransform(inputImage, blurCoordinates[6]));
+    distanceFromCentralColor = min(distance(centralColor, sampleColor) * distanceNormalizationFactor, 1.0);
+    gaussianWeight = 0.12 * (1.0 - distanceFromCentralColor);
+    gaussianWeightTotal += gaussianWeight;
+    sum += sampleColor * gaussianWeight;
+
+    sampleColor = sample(inputImage,samplerTransform(inputImage, blurCoordinates[7]));
+    distanceFromCentralColor = min(distance(centralColor, sampleColor) * distanceNormalizationFactor, 1.0);
+    gaussianWeight = 0.09 * (1.0 - distanceFromCentralColor);
+    gaussianWeightTotal += gaussianWeight;
+    sum += sampleColor * gaussianWeight;
+
+    sampleColor = sample(inputImage,samplerTransform(inputImage, blurCoordinates[8]));
+    distanceFromCentralColor = min(distance(centralColor, sampleColor) * distanceNormalizationFactor, 1.0);
+    gaussianWeight = 0.05 * (1.0 - distanceFromCentralColor);
+    gaussianWeightTotal += gaussianWeight;
+    sum += sampleColor * gaussianWeight;
+
+    vec4 result = sum / gaussianWeightTotal;
+
+    return result;
+}

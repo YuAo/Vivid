@@ -1,5 +1,6 @@
 #import <Cocoa/Cocoa.h>
 
+#import "YUCIBilateralFilter.h"
 #import "YUCIColorLookup.h"
 #import "YUCIFilterConstructor.h"
 #import "YUCIMetalUtilities.h"

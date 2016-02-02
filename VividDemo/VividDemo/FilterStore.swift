@@ -28,6 +28,8 @@ class FilterStore {
             ])
         )
         
+        filters.append(CIFilter(name: "YUCIBilateralFilter"))
+        
         return filters
     }()
 }
