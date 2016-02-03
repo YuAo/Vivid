@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '0C2591E736DBDE4EAB691098'
+               BlueprintIdentifier = '9D390D574482296CCFB70108'
                BlueprintName = 'Vivid'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'Vivid.framework'>

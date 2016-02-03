@@ -9,5 +9,5 @@
 #import "YUCIFilterUtilities.h"
 
 double YUCIGaussianDistributionPDF(double x, double sigma) {
-    return 1.0/sqrt(2 * M_PI * sigma * sigma) * pow(M_E, (- x * x) / (2 * sigma * sigma));
+    return 1.0/sqrt(2 * M_PI * sigma * sigma) * exp((- x * x) / (2 * sigma * sigma));
 }

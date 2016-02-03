@@ -28,7 +28,9 @@ class FilterStore {
             ])
         )
         
-        filters.append(CIFilter(name: "YUCIBilateralFilter"))
+        //filters.append(CIFilter(name: "YUCIBilateralFilter"))
+        
+        filters.append(CIFilter(name: "YUCISurfaceBlur"))
         
         return filters
     }()
