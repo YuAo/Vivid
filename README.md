@@ -28,6 +28,12 @@ Uses a color lookup table (LUT) to remap the colors in an image. The default LUT
 
 *This filter may not work well in the default light-linear working color space. Use `kCIContextWorkingColorSpace` key to specify a working color space when creating the `CIContext` object.*
 
+####YUCISurfaceBlur
+
+Blurs an image while preserving edges. This filter is very similar to the Photoshop's "Surface Blur" filter.
+
+Useful for creating special effects and for removing noise or graininess.
+
 ##Utilities
 
 ####YUCIFilterConstructor
