@@ -7,10 +7,7 @@
 //
 
 #import "YUCIBilateralFilter.h"
-
-static double YUCIGaussianDistributionPDF(double x, double sigma) {
-    return 1.0/sqrt(2 * M_PI * sigma * sigma) * pow(M_E, (- x * x) / (2 * sigma * sigma));
-}
+#import "YUCIFilterUtilities.h"
 
 @implementation YUCIBilateralFilter
 
