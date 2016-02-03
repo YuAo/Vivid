@@ -30,7 +30,7 @@ Uses a color lookup table (LUT) to remap the colors in an image. The default LUT
 
 ####YUCISurfaceBlur
 
-Blurs an image while preserving edges. This filter is very similar to the Photoshop's "Surface Blur" filter.
+Blurs an image while preserving edges. This filter is almost identical to Photoshop's "Surface Blur" filter.
 
 Useful for creating special effects and for removing noise or graininess. Slow on large `inputRadius`.
 
