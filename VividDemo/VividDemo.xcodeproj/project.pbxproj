@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		90DA84BF5CB1F9B994D9238D /* Pods_VividDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC1F5CEB6600EC4323FAF0DA /* Pods_VividDemo.framework */; };
+		9D51A5E81C62F6E7006CBCF5 /* sample2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9D51A5E71C62F6E7006CBCF5 /* sample2.jpg */; };
 		9D5BEFFE1C5D028700F1C15E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5BEFFD1C5D028700F1C15E /* AppDelegate.swift */; };
 		9D5BF0021C5D028800F1C15E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D5BF0011C5D028800F1C15E /* Assets.xcassets */; };
 		9D5BF0051C5D028800F1C15E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D5BF0031C5D028800F1C15E /* Main.storyboard */; };
@@ -22,6 +23,7 @@
 /* Begin PBXFileReference section */
 		57A84DDB8EB0DE86257489AE /* Pods-VividDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VividDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-VividDemo/Pods-VividDemo.release.xcconfig"; sourceTree = "<group>"; };
 		7D51358924EB063C87C3348E /* Pods-VividDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VividDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VividDemo/Pods-VividDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		9D51A5E71C62F6E7006CBCF5 /* sample2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sample2.jpg; sourceTree = "<group>"; };
 		9D5BEFFA1C5D028700F1C15E /* VividDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VividDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D5BEFFD1C5D028700F1C15E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9D5BF0011C5D028800F1C15E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 			children = (
 				9D5BF00F1C5D03E900F1C15E /* color_lookup_miss_etikate.png */,
 				9D5BF0101C5D03E900F1C15E /* sample.jpg */,
+				9D51A5E71C62F6E7006CBCF5 /* sample2.jpg */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -171,6 +174,7 @@
 			files = (
 				9D5BF0021C5D028800F1C15E /* Assets.xcassets in Resources */,
 				9D5BF0051C5D028800F1C15E /* Main.storyboard in Resources */,
+				9D51A5E81C62F6E7006CBCF5 /* sample2.jpg in Resources */,
 				9D5BF0111C5D03E900F1C15E /* color_lookup_miss_etikate.png in Resources */,
 				9D5BF0121C5D03E900F1C15E /* sample.jpg in Resources */,
 			);

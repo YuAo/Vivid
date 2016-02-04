@@ -28,9 +28,11 @@ class FilterStore {
             ])
         )
         
-        //filters.append(CIFilter(name: "YUCIBilateralFilter"))
-        
         filters.append(CIFilter(name: "YUCISurfaceBlur"))
+        
+        filters.append(CIFilter(name: "YUCICrossZoomTransition"))
+        
+        filters.append(CIFilter(name: "YUCIFlashTransition"))
         
         return filters
     }()

@@ -22,6 +22,8 @@ class FilterPreviewViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.imageView.layerUsesCoreImageFilters = true
+        
         self.inputImage = NSImage(named: "sample.jpg")
         self.inputCIImage = CIImage(contentsOfURL: NSBundle.mainBundle().URLForResource("sample", withExtension: "jpg")!)
         self.renderImageWithFilter(nil)
@@ -36,15 +38,39 @@ class FilterPreviewViewController: NSViewController {
     func renderImageWithFilter(filter: CIFilter?) {
         self.filter = filter
         if let filter = filter {
-            filter.setValue(self.inputCIImage, forKey: kCIInputImageKey)
-            let outputCIImage = filter.outputImage!
-            let outputCGImage = self.context.createCGImage(outputCIImage, fromRect: outputCIImage.extent)
-            let outputNSImage = NSImage(CGImage: outputCGImage, size: outputCIImage.extent.size)
-            self.processedImage = outputNSImage
+            if filter.name.hasSuffix("Transition") {
+                let transition = CATransition()
+                transition.filter = filter
+                transition.duration = 1.0
+                self.processedImage = self.inputImage
+                if self.inputImage == self.imageView.image {
+                    transition.delegate = self
+                    self.imageView.image = NSImage(named: "sample2.jpg")
+                    //transition back
+                } else {
+                    self.imageView.image = self.inputImage
+                }
+                self.imageView.layer?.addAnimation(transition, forKey: kCATransition)
+            } else {
+                filter.setValue(self.inputCIImage, forKey: kCIInputImageKey)
+                let outputCIImage = filter.outputImage!
+                let outputCGImage = self.context.createCGImage(outputCIImage, fromRect: outputCIImage.extent)
+                let outputNSImage = NSImage(CGImage: outputCGImage, size: outputCIImage.extent.size)
+                self.processedImage = outputNSImage
+                self.imageView.image = self.processedImage
+            }
         } else {
             self.processedImage = self.inputImage
+            self.imageView.image = self.processedImage
         }
-        self.imageView.image = self.processedImage
+    }
+    
+    override func animationDidStop(anim: CAAnimation, finished flag: Bool) {
+        let transition = CATransition()
+        transition.filter = self.filter
+        transition.duration = 1.0
+        self.imageView.layer?.addAnimation(transition, forKey: kCATransition)
+        self.imageView.image = self.inputImage
     }
     
     @IBAction func handleImageViewPress(sender: NSPressGestureRecognizer) {
