@@ -54,7 +54,7 @@
     CIVector *extent = self.inputExtent?:defaultInputExtent;
     return [[YUCICrossZoomTransition filterKernel] applyWithExtent:extent.CGRectValue
                                                        roiCallback:^CGRect(int index, CGRect destRect) {
-                                                           return destRect;
+                                                           return extent.CGRectValue;
                                                        }
                                                          arguments:@[self.inputImage,self.inputTargetImage,self.inputStrength,extent,self.inputTime]];
 }
