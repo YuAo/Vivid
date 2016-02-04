@@ -34,6 +34,14 @@ class FilterStore {
         
         filters.append(CIFilter(name: "YUCIFlashTransition"))
         
+        filters.append(CIFilter(
+            name: "YUCIStarfieldGenerator",
+            withInputParameters:[
+                "inputExtent": CIVector(CGRect: CGRectMake(0, 0, 1200, 800)),
+                "inputTime": 0
+            ])
+        )
+        
         return filters
     }()
 }

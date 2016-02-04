@@ -8,6 +8,7 @@
 #import "YUCIFlashTransition.h"
 #import "YUCIMetalUtilities.h"
 #import "YUCIRGBToneCurve.h"
+#import "YUCIStarfieldGenerator.h"
 #import "YUCISurfaceBlur.h"
 
 FOUNDATION_EXPORT double VividVersionNumber;

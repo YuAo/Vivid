@@ -51,6 +51,12 @@ class FilterPreviewViewController: NSViewController {
                     self.imageView.image = self.inputImage
                 }
                 self.imageView.layer?.addAnimation(transition, forKey: kCATransition)
+            } else if (filter.name.hasSuffix("Generator")) {
+                let outputCIImage = filter.outputImage!
+                let outputCGImage = self.context.createCGImage(outputCIImage, fromRect: outputCIImage.extent)
+                let outputNSImage = NSImage(CGImage: outputCGImage, size: outputCIImage.extent.size)
+                self.processedImage = outputNSImage
+                self.imageView.image = self.processedImage
             } else {
                 filter.setValue(self.inputCIImage, forKey: kCIInputImageKey)
                 let outputCIImage = filter.outputImage!
