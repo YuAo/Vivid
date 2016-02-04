@@ -10,7 +10,9 @@ Available on both OS X and iOS.
 
 Involving...
 
-##Filters
+##Core Image Filters
+
+###Filters
 
 ####YUCIRGBToneCurve
 
@@ -34,6 +36,8 @@ Blurs an image while preserving edges. This filter is almost identical to Photos
 
 Useful for creating special effects and for removing noise or graininess. Slow on large `inputRadius`.
 
+###Transitions
+
 ####YUCICrossZoomTransition
 
 A transition that pushes the `inputImage` toward the viewer and then snaps back with the `inputTargetImage`.
@@ -41,6 +45,12 @@ A transition that pushes the `inputImage` toward the viewer and then snaps back 
 ####YUCIFlashTransition
 
 Transitions from one image to another by creating a flash effect.
+
+###Generators
+
+####YUCIStarfieldGenerator
+
+Generate a starfield image.
 
 ##Utilities
 
