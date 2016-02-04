@@ -7,8 +7,23 @@
 //
 
 #import "YUCICrossZoomTransition.h"
+#import "YUCIFilterConstructor.h"
 
 @implementation YUCICrossZoomTransition
+
++ (void)load {
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        @autoreleasepool {
+            if ([CIFilter respondsToSelector:@selector(registerFilterName:constructor:classAttributes:)]) {
+                [CIFilter registerFilterName:NSStringFromClass([YUCICrossZoomTransition class])
+                                 constructor:[YUCIFilterConstructor constructor]
+                             classAttributes:@{kCIAttributeFilterCategories: @[kCICategoryStillImage,kCICategoryVideo,kCICategoryTransition],
+                                               kCIAttributeFilterDisplayName: @"Cross Zoom Transition"}];
+            }
+        }
+    });
+}
 
 + (CIKernel *)filterKernel {
     static CIKernel *kernel;
@@ -35,13 +50,13 @@
 }
 
 - (CIImage *)outputImage {
-    CIVector *defaultInputExtent = [CIVector vectorWithCGRect:CGRectUnion(self.inputImage.extent, self.outputImage.extent)];
-    self.inputExtent = [CIVector vectorWithCGRect:self.inputImage.extent];
-    return [[YUCICrossZoomTransition filterKernel] applyWithExtent:self.inputImage.extent
+    CIVector *defaultInputExtent = [CIVector vectorWithCGRect:CGRectUnion(self.inputImage.extent, self.inputTargetImage.extent)];
+    CIVector *extent = self.inputExtent?:defaultInputExtent;
+    return [[YUCICrossZoomTransition filterKernel] applyWithExtent:extent.CGRectValue
                                                        roiCallback:^CGRect(int index, CGRect destRect) {
                                                            return destRect;
                                                        }
-                                                         arguments:@[self.inputImage,self.inputTargetImage,self.inputStrength,self.inputExtent?:defaultInputExtent,self.inputTime]];
+                                                         arguments:@[self.inputImage,self.inputTargetImage,self.inputStrength,extent,self.inputTime]];
 }
 
 @end
