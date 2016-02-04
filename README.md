@@ -50,7 +50,7 @@ Transitions from one image to another by creating a flash effect.
 
 ####YUCIStarfieldGenerator
 
-Generate a starfield image.
+Generate a starfield image. Animatable by changing the `inputTime` parameter.
 
 ##Utilities
 
