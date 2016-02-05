@@ -1,7 +1,7 @@
 #import <Cocoa/Cocoa.h>
 
 #import "YUCIBilateralFilter.h"
-#import "YUCIBubblesGenerator.h"
+#import "YUCIBlobsGenerator.h"
 #import "YUCIColorLookup.h"
 #import "YUCICrossZoomTransition.h"
 #import "YUCIFilterConstructor.h"

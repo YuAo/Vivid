@@ -1,25 +1,25 @@
 //
-//  YUCIBubblesGenerator.m
+//  YUCIBlobsGenerator.m
 //  Pods
 //
-//  Created by YuAo on 2/5/16.
+//  Created by YuAo on 2/6/16.
 //
 //
 
-#import "YUCIBubblesGenerator.h"
+#import "YUCIBlobsGenerator.h"
 #import "YUCIFilterConstructor.h"
 
-@implementation YUCIBubblesGenerator
+@implementation YUCIBlobsGenerator
 
 + (void)load {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         @autoreleasepool {
             if ([CIFilter respondsToSelector:@selector(registerFilterName:constructor:classAttributes:)]) {
-                [CIFilter registerFilterName:NSStringFromClass([YUCIBubblesGenerator class])
+                [CIFilter registerFilterName:NSStringFromClass([YUCIBlobsGenerator class])
                                  constructor:[YUCIFilterConstructor constructor]
                              classAttributes:@{kCIAttributeFilterCategories: @[kCICategoryStillImage,kCICategoryVideo,kCICategoryGenerator],
-                                               kCIAttributeFilterDisplayName: @"Bubbles Generator"}];
+                                               kCIAttributeFilterDisplayName: @"Blobs Generator"}];
             }
         }
     });
@@ -29,7 +29,7 @@
     static CIColorKernel *kernel;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        NSString *kernelString = [[NSString alloc] initWithContentsOfURL:[[NSBundle bundleForClass:self] URLForResource:NSStringFromClass([YUCIBubblesGenerator class]) withExtension:@"cikernel"] encoding:NSUTF8StringEncoding error:nil];
+        NSString *kernelString = [[NSString alloc] initWithContentsOfURL:[[NSBundle bundleForClass:self] URLForResource:NSStringFromClass([YUCIBlobsGenerator class]) withExtension:@"cikernel"] encoding:NSUTF8StringEncoding error:nil];
         kernel = [CIColorKernel kernelWithString:kernelString];
     });
     return kernel;
@@ -50,8 +50,8 @@
 }
 
 - (CIImage *)outputImage {
-    return [[YUCIBubblesGenerator filterKernel] applyWithExtent:self.inputExtent.CGRectValue
-                                                      arguments:@[self.inputExtent,self.inputTime]];
+    return [[YUCIBlobsGenerator filterKernel] applyWithExtent:self.inputExtent.CGRectValue
+                                                    arguments:@[self.inputExtent,self.inputTime]];
 }
 
 @end
