@@ -50,11 +50,11 @@ Transitions from one image to another by creating a flash effect.
 
 ####YUCIStarfieldGenerator
 
-Generate a starfield image. Animatable by changing the `inputTime` parameter.
+Generate a starfield image. Animatable by changing the `inputTime` parameter. Based on [Star Nest](https://www.shadertoy.com/view/XlfGRj) by Pablo Román Andrioli
 
-####YUCIBubblesGenerator
+####YUCIBlobsGenerator
 
-Generate a image with colorful bubbles. Animatable by changing the `inputTime` parameter.
+Generate a image with colorful blobs. Animatable by changing the `inputTime` parameter. Based on [Blobs](https://www.shadertoy.com/view/lsfGzr) by [@paulofalcao](https://twitter.com/paulofalcao)
 
 ##Utilities
 
