@@ -52,6 +52,10 @@ Transitions from one image to another by creating a flash effect.
 
 Generate a starfield image. Animatable by changing the `inputTime` parameter.
 
+####YUCIBubblesGenerator
+
+Generate a image with colorful bubbles. Animatable by changing the `inputTime` parameter.
+
 ##Utilities
 
 ####YUCIFilterConstructor
