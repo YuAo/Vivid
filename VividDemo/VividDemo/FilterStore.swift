@@ -42,6 +42,14 @@ class FilterStore {
             ])
         )
         
+        filters.append(CIFilter(
+            name: "YUCIBubblesGenerator",
+            withInputParameters:[
+                "inputExtent": CIVector(CGRect: CGRectMake(0, 0, 1200, 800)),
+                "inputTime": 0
+            ])
+        )
+        
         return filters
     }()
 }
