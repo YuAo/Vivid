@@ -10,10 +10,10 @@
 
 @interface YUCIStarfieldGenerator : CIFilter
 
-@property (nonatomic,copy) CIVector *inputExtent;
+@property (nonatomic, copy, null_resettable) CIVector *inputExtent;
 
-@property (nonatomic,copy) NSNumber *inputTime;
+@property (nonatomic, copy, null_resettable) NSNumber *inputTime;
 
-@property (nonatomic,copy) CIVector *inputRotation;
+@property (nonatomic, copy, null_resettable) CIVector *inputRotation;
 
 @end

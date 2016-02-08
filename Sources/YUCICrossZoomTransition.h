@@ -10,13 +10,13 @@
 
 @interface YUCICrossZoomTransition : CIFilter
 
-@property (nonatomic,strong) CIImage *inputImage;
-@property (nonatomic,strong) CIImage *inputTargetImage;
+@property (nonatomic, strong, nullable) CIImage *inputImage;
+@property (nonatomic, strong, nullable) CIImage *inputTargetImage;
 
-@property (nonatomic,copy) CIVector *inputExtent;
+@property (nonatomic, copy, nullable) CIVector *inputExtent;
 
-@property (nonatomic,copy) NSNumber *inputStrength;
+@property (nonatomic, copy, null_resettable) NSNumber *inputStrength; //default 0.3
 
-@property (nonatomic,copy) NSNumber *inputTime; /* 0 to 1 */
+@property (nonatomic, copy, null_resettable) NSNumber *inputTime; /* 0 to 1 */
 
 @end

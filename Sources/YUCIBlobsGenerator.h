@@ -10,9 +10,9 @@
 
 @interface YUCIBlobsGenerator : CIFilter
 
-@property (nonatomic,copy) CIVector *inputExtent;
+@property (nonatomic, copy, null_resettable) CIVector *inputExtent; //default 640x800
 
-@property (nonatomic,copy) NSNumber *inputTime;
+@property (nonatomic, copy, null_resettable) NSNumber *inputTime; //default 0
 
 
 @end

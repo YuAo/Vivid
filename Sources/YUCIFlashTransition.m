@@ -56,6 +56,13 @@
     return _inputFlashZoom;
 }
 
+- (NSNumber *)inputTime {
+    if (!_inputTime) {
+        _inputTime = @(0);
+    }
+    return _inputTime;
+}
+
 - (CIImage *)outputImage {
     CIVector *defaultInputExtent = [CIVector vectorWithCGRect:CGRectUnion(self.inputImage.extent, self.inputTargetImage.extent)];
     CIVector *extent = self.inputExtent?:defaultInputExtent;

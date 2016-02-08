@@ -10,10 +10,10 @@
 
 @interface YUCISurfaceBlur : CIFilter
 
-@property (nonatomic,strong) CIImage *inputImage;
+@property (nonatomic, strong, nullable) CIImage *inputImage;
 
-@property (nonatomic,copy) NSNumber *inputRadius; //default 10
+@property (nonatomic, copy, null_resettable) NSNumber *inputRadius; //default 10
 
-@property (nonatomic,copy) NSNumber *inputThreshold; //0.0-255.0; //default 10
+@property (nonatomic, copy, null_resettable) NSNumber *inputThreshold; //0.0-255.0; //default 10
 
 @end

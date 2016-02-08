@@ -10,15 +10,15 @@
 
 @interface YUCIFlashTransition : CIFilter
 
-@property (nonatomic,strong) CIImage *inputImage;
-@property (nonatomic,strong) CIImage *inputTargetImage;
+@property (nonatomic, strong, nullable) CIImage *inputImage;
+@property (nonatomic, strong, nullable) CIImage *inputTargetImage;
 
-@property (nonatomic,copy) NSNumber *inputFlashPhase;
-@property (nonatomic,copy) NSNumber *inputFlashIntensity;
-@property (nonatomic,copy) NSNumber *inputFlashZoom;
+@property (nonatomic, copy, null_resettable) NSNumber *inputFlashPhase;
+@property (nonatomic, copy, null_resettable) NSNumber *inputFlashIntensity;
+@property (nonatomic, copy, null_resettable) NSNumber *inputFlashZoom;
 
-@property (nonatomic,copy) CIVector *inputExtent;
+@property (nonatomic, copy, nullable) CIVector *inputExtent;
 
-@property (nonatomic,copy) NSNumber *inputTime; /* 0 to 1 */
+@property (nonatomic, copy, null_resettable) NSNumber *inputTime; /* 0 to 1 */
 
 @end

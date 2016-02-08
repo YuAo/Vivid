@@ -25,6 +25,16 @@
     });
 }
 
++ (CIKernel *)filterKernel {
+    static CIKernel *kernel;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        NSString *kernelString = [[NSString alloc] initWithContentsOfURL:[[NSBundle bundleForClass:self] URLForResource:NSStringFromClass([YUCIColorLookup class]) withExtension:@"cikernel"] encoding:NSUTF8StringEncoding error:nil];
+        kernel = [CIKernel kernelWithString:kernelString];
+    });
+    return kernel;
+}
+
 - (NSNumber *)inputIntensity {
     if (!_inputIntensity) {
         _inputIntensity = @(1.0);
@@ -37,16 +47,6 @@
         _inputColorLookupTable = [CIImage imageWithContentsOfURL:[[NSBundle bundleForClass:self.class] URLForResource:@"YUCIColorLookupTableDefault" withExtension:@"png"]];
     }
     return _inputColorLookupTable;
-}
-
-+ (CIKernel *)filterKernel {
-    static CIKernel *kernel;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        NSString *kernelString = [[NSString alloc] initWithContentsOfURL:[[NSBundle bundleForClass:self] URLForResource:NSStringFromClass([YUCIColorLookup class]) withExtension:@"cikernel"] encoding:NSUTF8StringEncoding error:nil];
-        kernel = [CIKernel kernelWithString:kernelString];
-    });
-    return kernel;
 }
 
 - (CIImage *)outputImage {
