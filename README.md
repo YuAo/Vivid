@@ -36,6 +36,10 @@ Blurs an image while preserving edges. This filter is almost identical to Photos
 
 Useful for creating special effects and for removing noise or graininess. Slow on large `inputRadius`.
 
+####YUCITriangularPixellate
+
+Maps an image to colored triangles.
+
 ###Transitions
 
 ####YUCICrossZoomTransition
