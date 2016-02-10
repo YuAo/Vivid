@@ -1,0 +1,33 @@
+
+kernel vec4 filterKernel(sampler inputImage, vec2 center, float scale, float inputAngle) {
+    float sy = scale/2.0 / tan(inputAngle/2.0);
+    float nx = floor(destCoord().x/scale);
+    float ny = floor(destCoord().y/sy);
+    float ly = destCoord().y - ny * sy;
+    float lx = destCoord().x - nx * scale;
+    float dx = (sy - ly) * tan(inputAngle/2.0);
+
+    vec2 coord;
+    float mixFactor;
+
+    float rightBorder = scale/2.0 + dx;
+    float leftBorder = scale/2.0 - dx;
+    if (lx > rightBorder) {
+        coord = vec2((nx + 1.0) * scale, (ny + 0.5) * sy);
+        mixFactor = abs(lx - rightBorder);
+    } else if (lx < leftBorder) {
+        coord = vec2(nx * scale, (ny + 0.5) * sy);
+        mixFactor = abs(lx - leftBorder);
+    } else {
+        coord = vec2((nx + 0.5) * scale, (ny + 0.5) * sy);
+        mixFactor = 1.0;
+    }
+
+    if (mixFactor < 1.0) {
+        vec4 baseColor = sample(inputImage,samplerTransform(inputImage,vec2((nx + 0.5) * scale, (ny + 0.5) * sy)));
+        vec4 color = sample(inputImage,samplerTransform(inputImage,coord));
+        return mix(baseColor,color,mixFactor);
+    } else {
+        return sample(inputImage,samplerTransform(inputImage,coord));
+    }
+}

@@ -1,6 +1,6 @@
 {
   "name": "Vivid",
-  "version": "0.2",
+  "version": "0.3",
   "authors": {
     "YuAo": "me@imyuao.com"
   },
@@ -12,7 +12,7 @@
   },
   "source": {
     "git": "https://github.com/YuAo/Vivid.git",
-    "tag": "0.2"
+    "tag": "0.3"
   },
   "requires_arc": true,
   "platforms": {

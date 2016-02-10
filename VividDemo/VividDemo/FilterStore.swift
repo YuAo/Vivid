@@ -50,6 +50,8 @@ class FilterStore {
             ])
         )
         
+        filters.append(CIFilter(name: "YUCITriangularPixellate"))
+        
         return filters
     }()
 }
