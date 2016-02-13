@@ -63,7 +63,7 @@
 - (CIImage *)outputImage {
     return [[YUCITriangularPixellate filterKernel] applyWithExtent:self.inputImage.extent
                                                        roiCallback:^CGRect(int index, CGRect destRect) {
-                                                           return destRect;
+                                                           return CGRectInset(destRect, -self.inputScale.floatValue, -self.inputScale.floatValue/2.0 * tan(self.inputVertexAngle.floatValue/2.0));
                                                        } arguments:@[self.inputImage.imageByClampingToExtent,self.inputCenter,self.inputScale,self.inputVertexAngle]];
 }
 
