@@ -76,7 +76,7 @@ Create a `MTLTexture` from a `CGImageRef` object.
 
 ##Next
 
-- [ ] Filter previews.
+- [ ] Add filter previews to readme.
 - [ ] AA for triangular pixellate filter.
 - [ ] CLAHE
 
