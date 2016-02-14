@@ -7,6 +7,7 @@
 #import "YUCIFilterConstructor.h"
 #import "YUCIFilterUtilities.h"
 #import "YUCIFlashTransition.h"
+#import "YUCIFXAA.h"
 #import "YUCIMetalUtilities.h"
 #import "YUCIRGBToneCurve.h"
 #import "YUCIStarfieldGenerator.h"
