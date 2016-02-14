@@ -9,9 +9,9 @@
 #import "YUCIFilterPreviewGenerator.h"
 #import <AVFoundation/AVFoundation.h>
 
-CGSize const YUCIFilterPreviewImageSize = (CGSize){400,300};
-CGFloat const YUCIFilterPreviewImageSpacing = 80;
-CGFloat const YUCIFilterPreviewAreaEdgeInset = 20;
+CGSize  const YUCIFilterPreviewImageSize = (CGSize){280,210};
+CGFloat const YUCIFilterPreviewImageSpacing = 60;
+CGFloat const YUCIFilterPreviewAreaEdgeInset = 0;
 
 CGRect YUCIMakeRectWithAspectRatioFillRect(CGSize aspectRatio, CGRect boundingRect) {
     CGFloat horizontalRatio = boundingRect.size.width / aspectRatio.width;
@@ -62,6 +62,8 @@ CGRect YUCIMakeRectWithAspectRatioFillRect(CGSize aspectRatio, CGRect boundingRe
         }
         NSMutableData *data = [NSMutableData data];
         CGImageDestinationRef destination = CGImageDestinationCreateWithData((CFMutableDataRef)data, kUTTypePNG, 1, NULL);
+        //NSDictionary *properties = @{(NSString *)kCGImageDestinationLossyCompressionQuality: @(0.75)};
+        //CGImageDestinationSetProperties(destination,(CFDictionaryRef)properties);
         CGImageRef image = [self generatePreviewForFilter:filter context:context inputImageKeys:inputImageKeys];
         CGImageDestinationAddImage(destination, image, NULL);
         CGImageDestinationFinalize(destination);
@@ -129,8 +131,8 @@ CGRect YUCIMakeRectWithAspectRatioFillRect(CGSize aspectRatio, CGRect boundingRe
     CGRect previewRect = CGRectMake(0, 0, (inputImages.count + 1) * YUCIFilterPreviewImageSize.width + inputImages.count * YUCIFilterPreviewImageSpacing + YUCIFilterPreviewAreaEdgeInset * 2.0, YUCIFilterPreviewImageSize.height + YUCIFilterPreviewAreaEdgeInset * 2.0);
     
     CGImageRef image = [self imageByPerformingDrawing:^(CGContextRef cgContext) {
-        CGContextSetLineWidth(cgContext, 6);
-        CGFloat color[4] = {0.5,0.5,0.5,1.0};
+        CGContextSetLineWidth(cgContext, 5);
+        CGFloat color[4] = {0.7,0.7,0.7,1.0};
         CGContextSetStrokeColor(cgContext, color);
         CGContextSetLineJoin(cgContext, kCGLineJoinRound);
         
@@ -143,7 +145,7 @@ CGRect YUCIMakeRectWithAspectRatioFillRect(CGSize aspectRatio, CGRect boundingRe
             
             x += YUCIFilterPreviewImageSize.width;
             
-            CGRect spacingRect = CGRectInset(CGRectMake(x, YUCIFilterPreviewAreaEdgeInset, YUCIFilterPreviewImageSpacing, YUCIFilterPreviewImageSize.height), 20, 20);
+            CGRect spacingRect = CGRectInset(CGRectMake(x, YUCIFilterPreviewAreaEdgeInset, YUCIFilterPreviewImageSpacing, YUCIFilterPreviewImageSize.height), 15, 15);
             if (inputImage == inputImages.lastObject) {
                 //>
                 [self drawArrowSignInRect:spacingRect context:cgContext];
