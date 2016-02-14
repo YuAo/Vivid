@@ -52,6 +52,8 @@ class FilterStore {
         
         filters.append(CIFilter(name: "YUCITriangularPixellate"))
         
+        filters.append(CIFilter(name: "YUCIFXAA"))
+        
         return filters
     }()
 }

@@ -40,6 +40,10 @@ Useful for creating special effects and for removing noise or graininess. Slow o
 
 Maps an image to colored triangles.
 
+####YUCIFXAA
+
+A basic implementation of FXAA (Fast Approximate Anti-Aliasing).
+
 ###Transitions
 
 ####YUCICrossZoomTransition
@@ -73,6 +77,12 @@ Can be used in `+[CIFilter registerFilterName:constructor:classAttributes:]` to 
 `+[YUCIMetalUtilities textureFromCGImage:device:]`
 
 Create a `MTLTexture` from a `CGImageRef` object.
+
+##Next
+
+- [ ] Add filter previews to readme.
+- [x] AA for triangular pixellate filter.
+- [ ] CLAHE
 
 ##Based on Vivid
 
