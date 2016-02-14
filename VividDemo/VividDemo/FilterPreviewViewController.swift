@@ -38,7 +38,7 @@ class FilterPreviewViewController: NSViewController {
     func renderImageWithFilter(filter: CIFilter?) {
         self.filter = filter
         if let filter = filter {
-            if filter.name.hasSuffix("Transition") {
+            if filter.attributes[kCIAttributeFilterCategories]!.containsObject(kCICategoryTransition) {
                 let transition = CATransition()
                 transition.filter = filter
                 transition.duration = 1.0
@@ -51,7 +51,7 @@ class FilterPreviewViewController: NSViewController {
                     self.imageView.image = self.inputImage
                 }
                 self.imageView.layer?.addAnimation(transition, forKey: kCATransition)
-            } else if (filter.name.hasSuffix("Generator")) {
+            } else if (filter.attributes[kCIAttributeFilterCategories]!.containsObject(kCICategoryGenerator)) {
                 let outputCIImage = filter.outputImage!
                 let outputCGImage = self.context.createCGImage(outputCIImage, fromRect: outputCIImage.extent)
                 let outputNSImage = NSImage(CGImage: outputCGImage, size: outputCIImage.extent.size)

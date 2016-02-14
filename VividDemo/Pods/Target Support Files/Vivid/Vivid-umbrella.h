@@ -5,6 +5,7 @@
 #import "YUCIColorLookup.h"
 #import "YUCICrossZoomTransition.h"
 #import "YUCIFilterConstructor.h"
+#import "YUCIFilterPreviewGenerator.h"
 #import "YUCIFilterUtilities.h"
 #import "YUCIFlashTransition.h"
 #import "YUCIFXAA.h"
