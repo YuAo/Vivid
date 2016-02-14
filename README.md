@@ -40,6 +40,10 @@ Useful for creating special effects and for removing noise or graininess. Slow o
 
 Maps an image to colored triangles.
 
+####YUCIFXAA
+
+A basic implementation of FXAA (Fast Approximate Anti-Aliasing).
+
 ###Transitions
 
 ####YUCICrossZoomTransition
