@@ -74,6 +74,12 @@ Can be used in `+[CIFilter registerFilterName:constructor:classAttributes:]` to 
 
 Create a `MTLTexture` from a `CGImageRef` object.
 
+##Next
+
+- [ ] Filter previews.
+- [ ] AA for triangular pixellate filter.
+- [ ] CLAHE
+
 ##Based on Vivid
 
 ####[YUCIHighPassSkinSmoothing](https://github.com/YuAo/YUCIHighPassSkinSmoothing)
