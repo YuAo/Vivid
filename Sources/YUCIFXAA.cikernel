@@ -1,10 +1,4 @@
 
-const float FXAA_REDUCE_MIN = (1.0/ 128.0);
-
-const float FXAA_REDUCE_MUL = (1.0 / 8.0);
-
-const float FXAA_SPAN_MAX = 8.0;
-
 vec4 sampleTexture(sampler tex, vec2 coord) {
     return sample(tex, samplerTransform(tex, coord));
 }
@@ -13,6 +7,11 @@ vec4 fxaa(sampler tex, vec2 fragCoord,
             vec2 v_rgbNW, vec2 v_rgbNE, 
             vec2 v_rgbSW, vec2 v_rgbSE, 
             vec2 v_rgbM) {
+
+    const float FXAA_REDUCE_MIN = (1.0/ 128.0);
+    const float FXAA_REDUCE_MUL = (1.0 / 8.0);
+    const float FXAA_SPAN_MAX = 8.0;
+
     vec4 color;
     vec3 rgbNW = sampleTexture(tex, v_rgbNW).xyz;
     vec3 rgbNE = sampleTexture(tex, v_rgbNE).xyz;
