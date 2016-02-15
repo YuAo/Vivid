@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import Vivid
 
 class FilterPreviewViewController: NSViewController {
     @IBOutlet weak var imageView: NSImageView!
@@ -65,6 +66,19 @@ class FilterPreviewViewController: NSViewController {
                 self.processedImage = outputNSImage
                 self.imageView.image = self.processedImage
             }
+            
+            /*
+            let fileManager = NSFileManager()
+            let previewsFolderURL = fileManager.URLsForDirectory(NSSearchPathDirectory.DesktopDirectory, inDomains: NSSearchPathDomainMask.UserDomainMask).first!
+            if filter.attributes[kCIAttributeFilterCategories]!.containsObject(kCICategoryTransition) {
+                filter.setValue(CIImage(contentsOfURL: NSBundle.mainBundle().URLForResource("sample", withExtension: "jpg")!), forKey: kCIInputImageKey)
+                filter.setValue(CIImage(contentsOfURL: NSBundle.mainBundle().URLForResource("sample2", withExtension: "jpg")!), forKey: kCIInputTargetImageKey)
+                filter.setValue(nil, forKey: kCIInputExtentKey)
+            }
+            YUCIFilterPreviewGenerator.generatePreviewForFilter(filter, context: self.context, completion: { (data, filename) -> Void in
+                data.writeToURL(previewsFolderURL.URLByAppendingPathComponent(filename), atomically: true);
+            })
+            */
         } else {
             self.processedImage = self.inputImage
             self.imageView.image = self.processedImage
