@@ -24,11 +24,15 @@ These are stored as `CIVector`s in an `NSArray`, with normalized X and Y coordin
 
 The defaults are `[(0,0), (0.5,0.5), (1,1)]`
 
+![Preview](http://yuao.github.io/Vivid/previews/YUCIRGBToneCurve.png)
+
 ####YUCIColorLookup
 
 Uses a color lookup table (LUT) to remap the colors in an image. The default LUT can be found at `Sources/YUCIColorLookupTableDefault.png`
 
 *This filter may not work well in the default light-linear working color space. Use `kCIContextWorkingColorSpace` key to specify a working color space when creating the `CIContext` object.*
+
+![Preview](http://yuao.github.io/Vivid/previews/YUCIColorLookup.png)
 
 ####YUCISurfaceBlur
 
@@ -36,9 +40,13 @@ Blurs an image while preserving edges. This filter is almost identical to Photos
 
 Useful for creating special effects and for removing noise or graininess. Slow on large `inputRadius`.
 
+![Preview](http://yuao.github.io/Vivid/previews/YUCISurfaceBlur.png)
+
 ####YUCITriangularPixellate
 
 Maps an image to colored triangles.
+
+![Preview](http://yuao.github.io/Vivid/previews/YUCITriangularPixellate.png)
 
 ####YUCIFXAA
 
@@ -50,9 +58,13 @@ A basic implementation of FXAA (Fast Approximate Anti-Aliasing).
 
 A transition that pushes the `inputImage` toward the viewer and then snaps back with the `inputTargetImage`.
 
+![Preview](http://yuao.github.io/Vivid/previews/YUCICrossZoomTransition.gif)
+
 ####YUCIFlashTransition
 
 Transitions from one image to another by creating a flash effect.
+
+![Preview](http://yuao.github.io/Vivid/previews/YUCIFlashTransition.gif)
 
 ###Generators
 
@@ -60,9 +72,13 @@ Transitions from one image to another by creating a flash effect.
 
 Generate a starfield image. Animatable by changing the `inputTime` parameter. Based on [Star Nest](https://www.shadertoy.com/view/XlfGRj) by Pablo Román Andrioli
 
+![Preview](http://yuao.github.io/Vivid/previews/YUCIStarfieldGenerator.gif)
+
 ####YUCIBlobsGenerator
 
 Generate a image with colorful blobs. Animatable by changing the `inputTime` parameter. Based on [Blobs](https://www.shadertoy.com/view/lsfGzr) by [@paulofalcao](https://twitter.com/paulofalcao)
+
+![Preview](http://yuao.github.io/Vivid/previews/YUCIBlobsGenerator.gif)
 
 ##Utilities
 
