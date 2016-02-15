@@ -7,7 +7,10 @@
 //
 
 #import "YUCIFilterPreviewGenerator.h"
-#import <AVFoundation/AVFoundation.h>
+#import <ImageIO/ImageIO.h>
+#if __has_include(<MobileCoreServices/MobileCoreServices.h>)
+    #import <MobileCoreServices/MobileCoreServices.h>
+#endif
 
 CGSize  const YUCIFilterPreviewImageSize = (CGSize){280,210};
 CGFloat const YUCIFilterPreviewImageSpacing = 60;
