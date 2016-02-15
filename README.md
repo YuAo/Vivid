@@ -1,4 +1,4 @@
-![Vivid](https://raw.githubusercontent.com/YuAo/Vivid/master/Documentation/Assets/header.png)
+![Vivid](http://yuao.github.io/Vivid/assets/logo.png)
 
 ![CocoaPods Platform](https://img.shields.io/cocoapods/p/Vivid.svg?style=flat-square)
 ![CocoaPods Version](https://img.shields.io/cocoapods/v/Vivid.svg?style=flat-square)
