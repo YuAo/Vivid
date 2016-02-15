@@ -1,5 +1,5 @@
 
-kernel vec4 filterKernel(sampler inputImage, vec2 center, float scale, float inputAngle) {
+kernel vec4 filterKernel(sampler inputImage, vec2 center, float scale, float tan_halfInputAngle) {
     const int MSAA_SAMPLE_COUNT = 4; //4xMSAA RGSS
     vec2 MSAASampleCoords[MSAA_SAMPLE_COUNT];
     MSAASampleCoords[0] = destCoord() + vec2(-0.375,0.125);
@@ -7,8 +7,7 @@ kernel vec4 filterKernel(sampler inputImage, vec2 center, float scale, float inp
     MSAASampleCoords[2] = destCoord() + vec2(0.375,-0.125);
     MSAASampleCoords[3] = destCoord() + vec2(-0.125,-0.375);
 
-    float tanHalfInputAngle = tan(inputAngle/2.0);
-    float scaleY = scale/2.0 / tanHalfInputAngle;
+    float scaleY = scale/2.0 / tan_halfInputAngle;
 
     vec4 color = vec4(0.0);
     for (int i = 0; i < MSAA_SAMPLE_COUNT; ++i) {
@@ -17,7 +16,7 @@ kernel vec4 filterKernel(sampler inputImage, vec2 center, float scale, float inp
         float ny = floor(sampleCoord.y/scaleY);
         float ly = sampleCoord.y - ny * scaleY;
         float lx = sampleCoord.x - nx * scale;
-        float dx = (scaleY - ly) * tanHalfInputAngle;
+        float dx = (scaleY - ly) * tan_halfInputAngle;
         vec2 coord;
         if (lx > scale/2.0 + dx) {
             coord = vec2((nx + 1.0) * scale, (ny + 0.5) * scaleY);

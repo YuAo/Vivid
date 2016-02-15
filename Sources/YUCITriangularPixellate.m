@@ -61,10 +61,11 @@
 }
 
 - (CIImage *)outputImage {
+    CGFloat tanHalfInputAngle = tan(self.inputVertexAngle.floatValue/2.0);
     return [[YUCITriangularPixellate filterKernel] applyWithExtent:self.inputImage.extent
                                                        roiCallback:^CGRect(int index, CGRect destRect) {
-                                                           return CGRectInset(destRect, -self.inputScale.floatValue, -self.inputScale.floatValue/2.0 * tan(self.inputVertexAngle.floatValue/2.0));
-                                                       } arguments:@[self.inputImage.imageByClampingToExtent,self.inputCenter,self.inputScale,self.inputVertexAngle]];
+                                                           return CGRectInset(destRect, -self.inputScale.floatValue, -self.inputScale.floatValue/2.0 * tanHalfInputAngle);
+                                                       } arguments:@[self.inputImage.imageByClampingToExtent,self.inputCenter,self.inputScale,@(tanHalfInputAngle)]];
 }
 
 @end
