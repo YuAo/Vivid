@@ -115,7 +115,10 @@ static NSData * YUCICLAHETransformLUTForContrastLimitedHistogram(vImagePixelCoun
         NSInteger dX = tileGridSizeX - ((NSInteger)inputImage.extent.size.width % tileGridSizeX);
         
         inputImageForLUT = [inputImage imageByApplyingFilter:NSStringFromClass([YUCIReflectedTile class]) withInputParameters:@{@"inputMode": @(YUCIReflectedTileModeReflectWithoutBorder)}];
-        inputImageForLUT = [inputImageForLUT imageByCroppingToRect:CGRectMake(inputImage.extent.origin.x, inputImage.extent.origin.y, inputImage.extent.size.width + dX, inputImage.extent.size.height + dY)];
+        
+        //extending the image's *bottom* and *right* border
+        inputImageForLUT = [inputImageForLUT imageByCroppingToRect:CGRectMake(inputImage.extent.origin.x, inputImage.extent.origin.y - dY, inputImage.extent.size.width + dX, inputImage.extent.size.height + dY)];
+        inputImageForLUT = [inputImageForLUT imageByApplyingTransform:CGAffineTransformMakeTranslation(0, dY)];
     }
     
     CGSize tileSize = CGSizeMake(inputImageForLUT.extent.size.width/tileGridSizeX, inputImageForLUT.extent.size.height/tileGridSizeY);
