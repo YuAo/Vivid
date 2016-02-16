@@ -10,6 +10,7 @@
 #import "YUCIFilterConstructor.h"
 #import <Accelerate/Accelerate.h>
 #import "YUCIReflectedTile.h"
+#import "YUCIUtilities.h"
 
 NSInteger const YUCICLAHEHistogramBinCount = 256;
 
@@ -132,69 +133,90 @@ static NSData * YUCICLAHETransformLUTForContrastLimitedHistogram(vImagePixelCoun
     vImagePixelCount totalPixelCountPerTile = (vImagePixelCount)tileSize.width * (vImagePixelCount)tileSize.height;
     
     /* Create LUTs */
-    NSData *LUTsData = [[NSData alloc] init];
+    NSUInteger numberOfLUTs = tileGridSizeX * tileGridSizeY;
+    NSUInteger byteCountPerLUT = YUCICLAHEHistogramBinCount * sizeof(u_int8_t);
     
-    for (NSInteger tileIndex = 0; tileIndex < tileGridSizeX * tileGridSizeY; ++tileIndex) {
-        NSInteger colum = tileIndex % tileGridSizeX;
-        NSInteger row = tileIndex / tileGridSizeX;
+    NSMutableData *LUTsData = [NSMutableData dataWithLength:numberOfLUTs * byteCountPerLUT];
+    if (!LUTsData) {
+        NSLog(@"%@: failed to allocates memory for LUTs.",self);
+        return nil;
+    }
+    
+    {
+        ptrdiff_t LUTRowBytes = tileSize.width * 4; // ARGB has 4 components
+        uint8_t *tileImageDataBuffer = calloc(LUTRowBytes * tileSize.height, sizeof(uint8_t)); // Buffer to render into
+        @YUCIDefer {
+            //defer free operation
+            if (tileImageDataBuffer) {
+                free(tileImageDataBuffer);
+            }
+        };
         
-        CIImage *tile = [inputImageForLUT imageByCroppingToRect:CGRectMake(inputImageForLUT.extent.origin.x + colum * tileSize.width,
-                                                                           inputImageForLUT.extent.origin.y + row * tileSize.height,
-                                                                           tileSize.width,
-                                                                           tileSize.height)];
-     
-        ptrdiff_t rowBytes = tile.extent.size.width * 4; // ARGB has 4 components
-        uint8_t *byteBuffer = calloc(rowBytes * tile.extent.size.height, sizeof(uint8_t)); // Buffer to render into
-        [self.context render:tile
-                    toBitmap:byteBuffer
-                    rowBytes:rowBytes
-                      bounds:tile.extent
-                      format:kCIFormatARGB8
-                  colorSpace:self.context.workingColorSpace];
-        
-        vImage_Buffer vImageBuffer;
-        vImageBuffer.data = byteBuffer;
-        vImageBuffer.width = tile.extent.size.width;
-        vImageBuffer.height = tile.extent.size.height;
-        vImageBuffer.rowBytes = rowBytes;
-        
-        vImagePixelCount h[YUCICLAHEHistogramBinCount];
-        vImagePixelCount s[YUCICLAHEHistogramBinCount];
-        vImagePixelCount l[YUCICLAHEHistogramBinCount];
-        vImagePixelCount alpha[YUCICLAHEHistogramBinCount];
-        vImagePixelCount *histogram[4] = {alpha, h, s, l};
-        
-        vImage_Error error = vImageHistogramCalculation_ARGB8888(&vImageBuffer, histogram, kvImageNoFlags);
-        free(byteBuffer);
-        
-        if (error != kvImageNoError) {
+        if (!tileImageDataBuffer) {
+            NSLog(@"%@: failed to allocates memory for tile buffer.",self);
             return nil;
         }
         
-        NSInteger histSize = YUCICLAHEHistogramBinCount;
-        vImagePixelCount clipped = 0;
-        for (NSInteger i = 0; i < histSize; ++i) {
-            if(l[i] > clipLimit) {
-                clipped += (l[i] - clipLimit);
-                l[i] = clipLimit;
-            };
+        for (NSInteger tileIndex = 0; tileIndex < tileGridSizeX * tileGridSizeY; ++tileIndex) {
+            NSInteger colum = tileIndex % tileGridSizeX;
+            NSInteger row = tileIndex / tileGridSizeX;
+            
+            CIImage *tile = [inputImageForLUT imageByCroppingToRect:CGRectMake(inputImageForLUT.extent.origin.x + colum * tileSize.width,
+                                                                               inputImageForLUT.extent.origin.y + row * tileSize.height,
+                                                                               tileSize.width,
+                                                                               tileSize.height)];
+         
+           
+            [self.context render:tile
+                        toBitmap:tileImageDataBuffer
+                        rowBytes:LUTRowBytes
+                          bounds:tile.extent
+                          format:kCIFormatARGB8
+                      colorSpace:self.context.workingColorSpace];
+            
+            vImage_Buffer vImageBuffer;
+            vImageBuffer.data = tileImageDataBuffer;
+            vImageBuffer.width = tile.extent.size.width;
+            vImageBuffer.height = tile.extent.size.height;
+            vImageBuffer.rowBytes = LUTRowBytes;
+            
+            vImagePixelCount h[YUCICLAHEHistogramBinCount];
+            vImagePixelCount s[YUCICLAHEHistogramBinCount];
+            vImagePixelCount l[YUCICLAHEHistogramBinCount];
+            vImagePixelCount alpha[YUCICLAHEHistogramBinCount];
+            vImagePixelCount *histogram[4] = {alpha, h, s, l};
+            
+            vImage_Error error = vImageHistogramCalculation_ARGB8888(&vImageBuffer, histogram, kvImageNoFlags);
+            if (error != kvImageNoError) {
+                NSLog(@"%@: failed to generate histogram. (vImage error: %@)",self,@(error));
+                return nil;
+            }
+            
+            NSInteger histSize = YUCICLAHEHistogramBinCount;
+            vImagePixelCount clipped = 0;
+            for (NSInteger i = 0; i < histSize; ++i) {
+                if(l[i] > clipLimit) {
+                    clipped += (l[i] - clipLimit);
+                    l[i] = clipLimit;
+                };
+            }
+            
+            vImagePixelCount redistBatch = clipped / histSize;
+            vImagePixelCount residual = clipped - redistBatch * histSize;
+            
+            for (NSInteger i = 0; i < histSize; ++i) {
+                l[i] += redistBatch;
+            }
+            
+            for (NSInteger i = 0; i < residual; ++i) {
+                l[i]++;
+            }
+            
+            NSData *tileLUTData = YUCICLAHETransformLUTForContrastLimitedHistogram(l, totalPixelCountPerTile);
+            
+            //using (numberOfLUTs - tileIndex - 1) * byteCountPerLUT as insert location for core image's y-inverted coordinate system.
+            [LUTsData replaceBytesInRange:NSMakeRange((numberOfLUTs - tileIndex - 1) * byteCountPerLUT, byteCountPerLUT) withBytes:tileLUTData.bytes];
         }
-        
-        vImagePixelCount redistBatch = clipped / histSize;
-        vImagePixelCount residual = clipped - redistBatch * histSize;
-        
-        for (NSInteger i = 0; i < histSize; ++i) {
-            l[i] += redistBatch;
-        }
-        
-        for (NSInteger i = 0; i < residual; ++i) {
-            l[i]++;
-        }
-        
-        //insert at start (Core Image's coord system is Y-inverted)
-        NSMutableData *data = [NSMutableData dataWithData:YUCICLAHETransformLUTForContrastLimitedHistogram(l, totalPixelCountPerTile)];
-        [data appendData:LUTsData];
-        LUTsData = data.copy;
     }
     
     CIImage *LUTs = [CIImage imageWithBitmapData:LUTsData

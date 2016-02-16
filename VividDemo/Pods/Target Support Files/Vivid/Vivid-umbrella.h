@@ -17,6 +17,7 @@
 #import "YUCIStarfieldGenerator.h"
 #import "YUCISurfaceBlur.h"
 #import "YUCITriangularPixellate.h"
+#import "YUCIUtilities.h"
 
 FOUNDATION_EXPORT double VividVersionNumber;
 FOUNDATION_EXPORT const unsigned char VividVersionString[];
