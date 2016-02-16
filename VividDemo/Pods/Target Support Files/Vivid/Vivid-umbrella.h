@@ -12,6 +12,7 @@
 #import "YUCIFXAA.h"
 #import "YUCIHistogramEqualization.h"
 #import "YUCIMetalUtilities.h"
+#import "YUCIReflectedTile.h"
 #import "YUCIRGBToneCurve.h"
 #import "YUCIStarfieldGenerator.h"
 #import "YUCISurfaceBlur.h"

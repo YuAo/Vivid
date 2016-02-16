@@ -9,6 +9,7 @@
 #import "YUCICLAHE.h"
 #import "YUCIFilterConstructor.h"
 #import <Accelerate/Accelerate.h>
+#import "YUCIReflectedTile.h"
 
 NSInteger const YUCICLAHEHistogramBinCount = 256;
 
@@ -113,8 +114,8 @@ static NSData * YUCICLAHETransformLUTForContrastLimitedHistogram(vImagePixelCoun
         NSInteger dY = tileGridSizeY - ((NSInteger)inputImage.extent.size.height % tileGridSizeY);
         NSInteger dX = tileGridSizeX - ((NSInteger)inputImage.extent.size.width % tileGridSizeX);
         
-#warning BORDER_REFLECT_101
-        inputImageForLUT = [self.inputImage.imageByClampingToExtent imageByCroppingToRect:CGRectMake(self.inputImage.extent.origin.x, self.inputImage.extent.origin.y, self.inputImage.extent.size.width + dX, self.inputImage.extent.size.height + dY)];
+        inputImageForLUT = [inputImage imageByApplyingFilter:NSStringFromClass([YUCIReflectedTile class]) withInputParameters:@{@"inputMode": @(YUCIReflectedTileModeReflectWithoutBorder)}];
+        inputImageForLUT = [inputImageForLUT imageByCroppingToRect:CGRectMake(inputImage.extent.origin.x, inputImage.extent.origin.y, inputImage.extent.size.width + dX, inputImage.extent.size.height + dY)];
     }
     
     CGSize tileSize = CGSizeMake(inputImageForLUT.extent.size.width/tileGridSizeX, inputImageForLUT.extent.size.height/tileGridSizeY);
