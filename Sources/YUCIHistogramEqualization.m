@@ -55,7 +55,7 @@
     vImageBuffer.height = self.inputImage.extent.size.height;
     vImageBuffer.rowBytes = rowBytes;
     
-    vImageEqualization_ARGB8888(&vImageBuffer, &vImageBuffer, kvImageDoNotTile);
+    vImageEqualization_ARGB8888(&vImageBuffer, &vImageBuffer, kvImageNoFlags);
     
     NSData *bitmapData = [NSData dataWithBytesNoCopy:vImageBuffer.data length:vImageBuffer.rowBytes * vImageBuffer.height freeWhenDone:YES];
     CIImage *result = [[CIImage alloc] initWithBitmapData:bitmapData bytesPerRow:vImageBuffer.rowBytes size:CGSizeMake(vImageBuffer.width, vImageBuffer.height) format:kCIFormatARGB8 colorSpace:self.context.workingColorSpace];
