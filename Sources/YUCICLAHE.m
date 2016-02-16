@@ -161,7 +161,7 @@ static NSData * YUCICLAHETransformLUTForContrastLimitedHistogram(vImagePixelCoun
         vImagePixelCount alpha[YUCICLAHEHistogramBinCount];
         vImagePixelCount *histogram[4] = {alpha, h, s, l};
         
-        vImage_Error error = vImageHistogramCalculation_ARGB8888(&vImageBuffer, histogram, 0);
+        vImage_Error error = vImageHistogramCalculation_ARGB8888(&vImageBuffer, histogram, kvImageNoFlags);
         free(byteBuffer);
         
         if (error != kvImageNoError) {
