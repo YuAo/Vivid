@@ -54,6 +54,12 @@ A basic implementation of FXAA (Fast Approximate Anti-Aliasing).
 
 ![Preview](http://yuao.github.io/Vivid/previews/YUCIFXAA.png)
 
+####YUCIHistogramEqualization
+
+Perform a [Histogram Equalization](https://en.wikipedia.org/wiki/Histogram_equalization) on the input image. Internally uses `Accelerate.framework`.
+
+![Preview](http://yuao.github.io/Vivid/previews/YUCIHistogramEqualization.png)
+
 ###Transitions
 
 ####YUCICrossZoomTransition
