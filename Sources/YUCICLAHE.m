@@ -126,8 +126,10 @@ static NSData * YUCICLAHETransformLUTForContrastLimitedHistogram(vImagePixelCoun
         clipLimit = MAX(clipLimit, 1);
     }
     
+    vImagePixelCount totalPixelCountPerTile = (vImagePixelCount)tileSize.width * (vImagePixelCount)tileSize.height;
+    
     /* Create LUTs */
-    NSMutableData *LUTsData = [[NSMutableData alloc] init];
+    NSData *LUTsData = [[NSData alloc] init];
     
     for (NSInteger tileIndex = 0; tileIndex < tileGridSizeX * tileGridSizeY; ++tileIndex) {
         NSInteger colum = tileIndex % tileGridSizeX;
@@ -161,6 +163,7 @@ static NSData * YUCICLAHETransformLUTForContrastLimitedHistogram(vImagePixelCoun
         
         vImage_Error error = vImageHistogramCalculation_ARGB8888(&vImageBuffer, histogram, 0);
         free(byteBuffer);
+        
         if (error != kvImageNoError) {
             return nil;
         }
@@ -185,7 +188,10 @@ static NSData * YUCICLAHETransformLUTForContrastLimitedHistogram(vImagePixelCoun
             l[i]++;
         }
         
-        [LUTsData appendData:YUCICLAHETransformLUTForContrastLimitedHistogram(l, (vImagePixelCount)tileSize.width * (vImagePixelCount)tileSize.height)];
+        //insert at start (Core Image's coord system is Y-inverted)
+        NSMutableData *data = [NSMutableData dataWithData:YUCICLAHETransformLUTForContrastLimitedHistogram(l, totalPixelCountPerTile)];
+        [data appendData:LUTsData];
+        LUTsData = data.copy;
     }
     
     CIImage *LUTs = [CIImage imageWithBitmapData:LUTsData
