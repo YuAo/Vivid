@@ -1,7 +1,7 @@
 
 float colorLookup(sampler LUTs /* r channel contains data */, float LUTIndex, float value) {
     vec4 LUTsExtent = samplerExtent(LUTs);
-    return sample(LUTs,samplerTransform(LUTs,vec2(value * (LUTsExtent.z - 1.0) + LUTsExtent.x, LUTsExtent.y + LUTIndex))).r;
+    return sample(LUTs,samplerTransform(LUTs,vec2(value * 255.0 + 0.5 + LUTsExtent.x, LUTIndex + 0.5 + LUTsExtent.y))).r;
 }
 
 kernel vec4 filterKernel(sampler inputImage, sampler LUTs, vec2 tileGridSize, vec2 tileSize) {
