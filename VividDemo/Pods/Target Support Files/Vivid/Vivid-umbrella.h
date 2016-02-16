@@ -2,6 +2,7 @@
 
 #import "YUCIBilateralFilter.h"
 #import "YUCIBlobsGenerator.h"
+#import "YUCICLAHE.h"
 #import "YUCIColorLookup.h"
 #import "YUCICrossZoomTransition.h"
 #import "YUCIFilterConstructor.h"

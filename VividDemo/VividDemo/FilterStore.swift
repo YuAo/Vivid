@@ -56,6 +56,8 @@ class FilterStore {
         
         filters.append(CIFilter(name: "YUCIHistogramEqualization"))
         
+        filters.append(CIFilter(name: "YUCICLAHE"))
+        
         return filters
     }()
 }
