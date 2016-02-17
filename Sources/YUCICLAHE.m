@@ -221,7 +221,7 @@ static NSData * YUCICLAHETransformLUTForContrastLimitedHistogram(vImagePixelCoun
     
     CIImage *LUTs = [CIImage imageWithBitmapData:LUTsData
                                      bytesPerRow:YUCICLAHEHistogramBinCount * sizeof(uint8_t)
-                                            size:CGSizeMake(YUCICLAHEHistogramBinCount, tileGridSizeX * tileGridSizeY)
+                                            size:CGSizeMake(YUCICLAHEHistogramBinCount, numberOfLUTs)
                                           format:kCIFormatR8
                                       colorSpace:self.context.workingColorSpace];
     
