@@ -52,17 +52,17 @@ class FilterPreviewViewController: NSViewController {
                     self.imageView.image = self.inputImage
                 }
                 self.imageView.layer?.addAnimation(transition, forKey: kCATransition)
-            } else if (filter.attributes[kCIAttributeFilterCategories]!.containsObject(kCICategoryGenerator)) {
-                let outputCIImage = filter.outputImage!
-                let outputCGImage = self.context.createCGImage(outputCIImage, fromRect: outputCIImage.extent)
-                let outputNSImage = NSImage(CGImage: outputCGImage, size: outputCIImage.extent.size)
-                self.processedImage = outputNSImage
-                self.imageView.image = self.processedImage
             } else {
-                filter.setValue(self.inputCIImage, forKey: kCIInputImageKey)
+                if (filter.inputKeys.contains(kCIInputImageKey)) {
+                    filter.setValue(self.inputCIImage, forKey: kCIInputImageKey)
+                }
                 let outputCIImage = filter.outputImage!
-                let outputCGImage = self.context.createCGImage(outputCIImage, fromRect: outputCIImage.extent)
-                let outputNSImage = NSImage(CGImage: outputCGImage, size: outputCIImage.extent.size)
+                var outputExtent = outputCIImage.extent
+                if CGRectIsInfinite(outputExtent) {
+                    outputExtent = CGRect(x: 0, y: 0, width: 1600, height: 800)
+                }
+                let outputCGImage = self.context.createCGImage(outputCIImage, fromRect: outputExtent)
+                let outputNSImage = NSImage(CGImage: outputCGImage, size: outputExtent.size)
                 self.processedImage = outputNSImage
                 self.imageView.image = self.processedImage
             }
