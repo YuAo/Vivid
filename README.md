@@ -4,7 +4,7 @@
 ![CocoaPods Version](https://img.shields.io/cocoapods/v/Vivid.svg?style=flat-square)
 ![CocoaPods License](https://img.shields.io/cocoapods/l/Vivid.svg?style=flat-square)
 
-A set of custom filters and utilities for Apple's [Core Image](https://developer.apple.com/library/mac/documentation/GraphicsImaging/Conceptual/CoreImaging/ci_intro/ci_intro.html) framework.
+A set of filters and utilities for Apple's [Core Image](https://developer.apple.com/library/mac/documentation/GraphicsImaging/Conceptual/CoreImaging/ci_intro/ci_intro.html) framework.
 
 Available on both OS X and iOS.
 
@@ -59,6 +59,12 @@ A basic implementation of FXAA (Fast Approximate Anti-Aliasing).
 Perform a [Histogram Equalization](https://en.wikipedia.org/wiki/Histogram_equalization) on the input image. Internally uses `Accelerate.framework`.
 
 ![Preview](http://yuao.github.io/Vivid/previews/YUCIHistogramEqualization.png)
+
+####YUCIReflectedTile
+
+Produces a tiled image from a source image by reflecting pixels over the edges.
+
+![Preview](http://yuao.github.io/Vivid/previews/YUCIReflectedTile.png)
 
 ###Transitions
 
