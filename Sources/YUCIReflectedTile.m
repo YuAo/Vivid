@@ -46,34 +46,13 @@
     CGRect inputExtent = self.inputImage.extent;
     return [[YUCIReflectedTile filterKernel] applyWithExtent:CGRectInfinite
                                                  roiCallback:^CGRect(int index, CGRect destRect) {
-                                                     CGPoint coord = destRect.origin;
                                                      if (CGRectContainsRect(inputExtent, destRect)) {
                                                          return destRect;
+                                                     } else if(CGRectContainsRect(destRect, inputExtent)) {
+                                                         return inputExtent;
                                                      } else {
-                                                         float w = inputExtent.size.width - (self.inputMode.integerValue == YUCIReflectedTileModeReflectWithoutBorder ? 1.0: 0.0);
-                                                         float h = inputExtent.size.height - (self.inputMode.integerValue == YUCIReflectedTileModeReflectWithoutBorder ? 1.0: 0.0);
-                                                         
-                                                         float x = coord.x - inputExtent.origin.x - inputExtent.size.width;
-                                                         NSInteger nx = x/w;
-                                                         float dx = x - nx * w;
-                                                         
-                                                         float y = coord.y - inputExtent.origin.y - inputExtent.size.height;
-                                                         NSInteger ny = y/h;
-                                                         float dy = y - ny * h;
-                                                         
-                                                         if (nx % 2 == 1) {
-                                                             coord.x = inputExtent.origin.x + inputExtent.size.width - (w - dx);
-                                                         } else {
-                                                             coord.x = inputExtent.origin.x + (w - dx) - destRect.size.width;
-                                                         }
-                                                         
-                                                         if (ny % 2 == 1) {
-                                                             coord.y = inputExtent.origin.y + inputExtent.size.height - (h - dy);
-                                                         } else {
-                                                             coord.y = inputExtent.origin.y + (h - dy) - destRect.size.height;
-                                                         }
-                                                         
-                                                         return CGRectMake(coord.x, coord.y, destRect.size.width, destRect.size.height);
+                                                         //needs rework.
+                                                         return inputExtent;
                                                      }
                                                  }
                                                   inputImage:self.inputImage
