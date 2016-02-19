@@ -66,6 +66,12 @@ Produces a tiled image from a source image by reflecting pixels over the edges.
 
 ![Preview](http://yuao.github.io/Vivid/previews/YUCIReflectedTile.png)
 
+####YUCICLAHE
+
+Perform a [Contrast Limited Adaptive Histogram Equalization](https://en.wikipedia.org/wiki/Adaptive_histogram_equalization#Contrast_Limited_AHE) on the lightness channel of the input image. 
+
+![Preview](http://yuao.github.io/Vivid/previews/YUCICLAHE.png)
+
 ###Transitions
 
 ####YUCICrossZoomTransition
@@ -110,7 +116,9 @@ Can be used to generate a preview image/gif for a filter. All the preview images
 
 - [x] Add filter previews to readme.
 - [x] AA for triangular pixellate filter.
-- [ ] CLAHE
+- [x] CLAHE
+- [ ] Write a paper on the implementation of CLAHE.
+- [ ] Kuwahara filter
 
 ##Based on Vivid
 
