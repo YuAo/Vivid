@@ -11,7 +11,6 @@
 #import "YUCIFlashTransition.h"
 #import "YUCIFXAA.h"
 #import "YUCIHistogramEqualization.h"
-#import "YUCIMetalUtilities.h"
 #import "YUCIReflectedTile.h"
 #import "YUCIReflectedTileROICalculator.h"
 #import "YUCIRGBToneCurve.h"
