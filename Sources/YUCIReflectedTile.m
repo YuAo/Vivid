@@ -8,6 +8,7 @@
 
 #import "YUCIReflectedTile.h"
 #import "YUCIFilterConstructor.h"
+#import "YUCIReflectedTileROICalculator.h"
 
 @implementation YUCIReflectedTile
 
@@ -46,14 +47,7 @@
     CGRect inputExtent = self.inputImage.extent;
     return [[YUCIReflectedTile filterKernel] applyWithExtent:CGRectInfinite
                                                  roiCallback:^CGRect(int index, CGRect destRect) {
-                                                     if (CGRectContainsRect(inputExtent, destRect)) {
-                                                         return destRect;
-                                                     } else if(CGRectContainsRect(destRect, inputExtent)) {
-                                                         return inputExtent;
-                                                     } else {
-                                                         //needs rework.
-                                                         return inputExtent;
-                                                     }
+                                                     return [YUCIReflectedTileROICalculator ROIForDestinationRect:destRect inputImageExtent:inputExtent mode:self.inputMode.integerValue];
                                                  }
                                                   inputImage:self.inputImage
                                                    arguments:@[self.inputMode,[CIVector vectorWithCGRect:self.inputImage.extent]]];

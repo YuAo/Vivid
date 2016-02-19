@@ -162,8 +162,7 @@ static NSData * YUCICLAHETransformLUTForContrastLimitedHistogram(vImagePixelCoun
                                                                                inputImageForLUT.extent.origin.y + row * tileSize.height,
                                                                                tileSize.width,
                                                                                tileSize.height)];
-         
-           
+            
             [self.context render:tile
                         toBitmap:tileImageDataBuffer
                         rowBytes:LUTRowBytes

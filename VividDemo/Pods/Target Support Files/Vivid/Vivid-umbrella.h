@@ -13,6 +13,7 @@
 #import "YUCIHistogramEqualization.h"
 #import "YUCIMetalUtilities.h"
 #import "YUCIReflectedTile.h"
+#import "YUCIReflectedTileROICalculator.h"
 #import "YUCIRGBToneCurve.h"
 #import "YUCIStarfieldGenerator.h"
 #import "YUCISurfaceBlur.h"
