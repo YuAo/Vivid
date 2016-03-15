@@ -58,6 +58,10 @@ class FilterStore {
         
         filters.append(CIFilter(name: "YUCICLAHE"))
         
+        filters.append(CIFilter(name: "YUCISkyGenerator", withInputParameters: [
+            "inputExtent": CIVector(CGRect: CGRectMake(0, 0, 1200, 800))
+        ]))
+        
         return filters
     }()
 }

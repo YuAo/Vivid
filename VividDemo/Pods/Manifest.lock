@@ -1,5 +1,5 @@
 PODS:
-  - Vivid (0.4)
+  - Vivid (0.5)
 
 DEPENDENCIES:
   - Vivid (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  Vivid: 5b97bd17244a645ad9bf69982e3b440dbffaf645
+  Vivid: cb41984e2004b020b2b3157e2e36c19e365062f1
 
 PODFILE CHECKSUM: 8262a662cfffd6453592239c061118e1d2944ea5
 
