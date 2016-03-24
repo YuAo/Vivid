@@ -68,6 +68,10 @@
 }
 
 - (CIImage *)outputImage {
+    if (!self.inputImage) {
+        return nil;
+    }
+    
     if (!self.toneCurveTexture) {
         [self validateInputs];
         [self updateToneCurveTexture];
