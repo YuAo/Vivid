@@ -98,7 +98,16 @@ static NSData * YUCICLAHETransformLUTForContrastLimitedHistogram(vImagePixelCoun
     return _inputTileGridSize;
 }
 
+- (void)setDefaults {
+    self.inputClipLimit = nil;
+    self.inputTileGridSize = nil;
+}
+
 - (CIImage *)outputImage {
+    if (!self.inputImage) {
+        return nil;
+    }
+    
     /* Convert to HSL */
     CIImage *inputImage = [[YUCICLAHE RGBToHSLKernel] applyWithExtent:self.inputImage.extent arguments:@[self.inputImage]];
     
