@@ -5,7 +5,7 @@
 kernel vec4 filterKernel(sampler inputImage, sampler LUTs, vec2 tileGridSize, vec2 tileSize) {
     vec4 textureColor = sample(inputImage,samplerCoord(inputImage)); /* HSL Color */
 
-    vec2 coord = destCoord();
+    vec2 coord = destCoord() - samplerExtent(inputImage).xy;
 
     float txf = coord.x / tileSize.x - 0.5;
 
