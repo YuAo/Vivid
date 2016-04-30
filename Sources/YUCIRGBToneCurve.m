@@ -90,7 +90,8 @@
 }
 
 - (void)updateToneCurveTexture {
-    if (self.redCurve.count == 256 &&
+    if (self.inputImage &&
+        self.redCurve.count == 256 &&
         self.greenCurve.count == 256 &&
         self.blueCurve.count == 256 &&
         self.rgbCompositeCurve.count == 256)
@@ -113,10 +114,11 @@
 }
 
 - (void)validateInputs {
-    if (_inputRGBCompositeControlPoints.count == 0 ||
-        _inputRedControlPoints.count == 0 ||
-        _inputGreenControlPoints.count == 0 ||
-        _inputBlueControlPoints.count  == 0)
+    if (self.inputImage &&
+        (_inputRGBCompositeControlPoints.count == 0 ||
+         _inputRedControlPoints.count == 0 ||
+         _inputGreenControlPoints.count == 0 ||
+         _inputBlueControlPoints.count  == 0))
     {
         NSArray *defaultControlPoints = self.defaultCurveControlPoints;
         NSArray *defaultCurve = [self getPreparedSplineCurve:defaultControlPoints];
@@ -160,7 +162,7 @@
 }
 
 - (void)setInputRGBCompositeControlPoints:(NSArray<CIVector *> *)inputRGBCompositeControlPoints {
-    if (![_inputRGBCompositeControlPoints isEqualToArray:inputRGBCompositeControlPoints]) {
+    if (self.inputImage && ![_inputRGBCompositeControlPoints isEqualToArray:inputRGBCompositeControlPoints]) {
         _inputRGBCompositeControlPoints = inputRGBCompositeControlPoints.copy;
         _rgbCompositeCurve = [self getPreparedSplineCurve:_inputRGBCompositeControlPoints];
         [self validateInputs];
@@ -169,7 +171,7 @@
 }
 
 - (void)setInputRedControlPoints:(NSArray<CIVector *> *)inputRedControlPoints {
-    if (![_inputRedControlPoints isEqualToArray:inputRedControlPoints]) {
+    if (self.inputImage && ![_inputRedControlPoints isEqualToArray:inputRedControlPoints]) {
         _inputRedControlPoints = inputRedControlPoints.copy;
         _redCurve = [self getPreparedSplineCurve:_inputRedControlPoints];
         [self validateInputs];
@@ -178,7 +180,7 @@
 }
 
 - (void)setInputGreenControlPoints:(NSArray<CIVector *> *)inputGreenControlPoints {
-    if (![_inputGreenControlPoints isEqualToArray:inputGreenControlPoints]) {
+    if (self.inputImage && ![_inputGreenControlPoints isEqualToArray:inputGreenControlPoints]) {
         _inputGreenControlPoints = inputGreenControlPoints.copy;
         _greenCurve = [self getPreparedSplineCurve:_inputGreenControlPoints];
         [self validateInputs];
@@ -187,7 +189,7 @@
 }
 
 - (void)setInputBlueControlPoints:(NSArray<CIVector *> *)inputBlueControlPoints {
-    if (![_inputBlueControlPoints isEqualToArray:inputBlueControlPoints]) {
+    if (self.inputImage && ![_inputBlueControlPoints isEqualToArray:inputBlueControlPoints]) {
         _inputBlueControlPoints = inputBlueControlPoints.copy;
         _blueCurve = [self getPreparedSplineCurve:_inputBlueControlPoints];
         [self validateInputs];
@@ -199,7 +201,7 @@
 
 - (NSArray *)getPreparedSplineCurve:(NSArray *)points
 {
-    if (points && [points count] > 0)
+    if (self.inputImage && points && [points count] > 0)
     {
         // Sort the array.
         NSArray *sortedPoints = [points sortedArrayUsingComparator:^NSComparisonResult(CIVector *a, CIVector *b) {
