@@ -15,7 +15,7 @@ class MainWindowController: NSWindowController {
     
     override func windowDidLoad() {
         super.windowDidLoad()
-        self.window?.titleVisibility = .Hidden
+        self.window?.titleVisibility = .hidden
         
         self.filtersToolbarItem.minSize.height = 32
         self.filtersPopUpButton.menu?.removeAllItems()
@@ -27,7 +27,7 @@ class MainWindowController: NSWindowController {
         }
     }
 
-    @IBAction func filtersPopUpButtonValueChanged(sender: NSPopUpButton) {
+    @IBAction func filtersPopUpButtonValueChanged(_ sender: NSPopUpButton) {
         let previewViewController = self.contentViewController as! FilterPreviewViewController
         let filter = sender.selectedItem?.representedObject as? CIFilter
         previewViewController.renderImageWithFilter(filter)
@@ -35,15 +35,15 @@ class MainWindowController: NSWindowController {
     
     var openPanel: NSOpenPanel?
     
-    @IBAction func chooseImageButtonClicked(sender: NSButton) {
+    @IBAction func chooseImageButtonClicked(_ sender: NSButton) {
         let openPanel = NSOpenPanel()
         openPanel.canChooseDirectories = false
         openPanel.canChooseFiles = true
         openPanel.allowsMultipleSelection = false
         openPanel.allowedFileTypes = [kUTTypeJPEG as String, kUTTypePNG as String]
-        openPanel.beginSheetModalForWindow(self.window!) { (result) -> Void in
+        openPanel.beginSheetModal(for: self.window!) { (result) -> Void in
             if result == NSFileHandlingPanelOKButton {
-                let URL = openPanel.URLs.first!
+                let URL = openPanel.urls.first!
                 let previewViewController = self.contentViewController as! FilterPreviewViewController
                 previewViewController.replaceInputImageWithItemAtURL(URL)
             }
@@ -51,7 +51,7 @@ class MainWindowController: NSWindowController {
         self.openPanel = openPanel
     }
     
-    override func prepareForSegue(segue: NSStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
         switch segue.destinationController {
         case let infoViewController as InfoViewController:
             let filter = self.filtersPopUpButton.selectedItem?.representedObject as? CIFilter

@@ -9,10 +9,10 @@
 import Cocoa
 import Vivid
 
-class FilterPreviewViewController: NSViewController {
+class FilterPreviewViewController: NSViewController, CAAnimationDelegate {
     @IBOutlet weak var imageView: NSImageView!
     
-    let context = CIContext(options: [kCIContextWorkingColorSpace: CGColorSpaceCreateWithName(kCGColorSpaceSRGB)!])
+    let context = CIContext(options: [kCIContextWorkingColorSpace: CGColorSpace(name: CGColorSpace.sRGB)!])
     var inputCIImage: CIImage!
     
     var inputImage: NSImage!
@@ -26,20 +26,20 @@ class FilterPreviewViewController: NSViewController {
         self.imageView.layerUsesCoreImageFilters = true
         
         self.inputImage = NSImage(named: "sample.jpg")
-        self.inputCIImage = CIImage(contentsOfURL: NSBundle.mainBundle().URLForResource("sample", withExtension: "jpg")!)
+        self.inputCIImage = CIImage(contentsOf: Bundle.main.url(forResource: "sample", withExtension: "jpg")!)
         self.renderImageWithFilter(nil)
     }
     
-    func replaceInputImageWithItemAtURL(URL: NSURL) {
-        self.inputImage = NSImage(contentsOfURL: URL)
-        self.inputCIImage = CIImage(contentsOfURL: URL)
+    func replaceInputImageWithItemAtURL(_ URL: Foundation.URL) {
+        self.inputImage = NSImage(contentsOf: URL)
+        self.inputCIImage = CIImage(contentsOf: URL)
         self.renderImageWithFilter(self.filter)
     }
     
-    func renderImageWithFilter(filter: CIFilter?) {
+    func renderImageWithFilter(_ filter: CIFilter?) {
         self.filter = filter
         if let filter = filter {
-            if filter.attributes[kCIAttributeFilterCategories]!.containsObject(kCICategoryTransition) {
+            if (filter.attributes[kCIAttributeFilterCategories]! as AnyObject).contains(kCICategoryTransition) {
                 let transition = CATransition()
                 transition.filter = filter
                 transition.duration = 1.0
@@ -51,18 +51,18 @@ class FilterPreviewViewController: NSViewController {
                 } else {
                     self.imageView.image = self.inputImage
                 }
-                self.imageView.layer?.addAnimation(transition, forKey: kCATransition)
+                self.imageView.layer?.add(transition, forKey: kCATransition)
             } else {
                 if (filter.inputKeys.contains(kCIInputImageKey)) {
                     filter.setValue(self.inputCIImage, forKey: kCIInputImageKey)
                 }
                 let outputCIImage = filter.outputImage!
                 var outputExtent = outputCIImage.extent
-                if CGRectIsInfinite(outputExtent) {
+                if outputExtent.isInfinite {
                     outputExtent = CGRect(x: 0, y: 0, width: 1600, height: 800)
                 }
-                let outputCGImage = self.context.createCGImage(outputCIImage, fromRect: outputExtent)
-                let outputNSImage = NSImage(CGImage: outputCGImage, size: outputExtent.size)
+                let outputCGImage = self.context.createCGImage(outputCIImage, from: outputExtent)
+                let outputNSImage = NSImage(cgImage: outputCGImage!, size: outputExtent.size)
                 self.processedImage = outputNSImage
                 self.imageView.image = self.processedImage
             }
@@ -85,21 +85,21 @@ class FilterPreviewViewController: NSViewController {
         }
     }
     
-    override func animationDidStop(anim: CAAnimation, finished flag: Bool) {
+    func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
         let transition = CATransition()
         transition.filter = self.filter
         transition.duration = 1.0
-        self.imageView.layer?.addAnimation(transition, forKey: kCATransition)
+        self.imageView.layer?.add(transition, forKey: kCATransition)
         self.imageView.image = self.inputImage
     }
     
-    @IBAction func handleImageViewPress(sender: NSPressGestureRecognizer) {
+    @IBAction func handleImageViewPress(_ sender: NSPressGestureRecognizer) {
         switch sender.state {
-        case .Began:
+        case .began:
             self.imageView.image = self.inputImage
-        case .Ended:
+        case .ended:
             self.imageView.image = self.processedImage
-        case .Cancelled:
+        case .cancelled:
             self.imageView.image = self.processedImage
         default:
             Void()

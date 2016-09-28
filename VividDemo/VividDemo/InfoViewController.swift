@@ -24,13 +24,13 @@ class InfoViewController: NSViewController {
     }
     
     func updateInfo() {
-        if self.viewLoaded {
+        if self.isViewLoaded {
             let filterDescription: String
             if let filter = self.filter {
                 var description = filter.name + "\n\n"
                 for inputKey in filter.inputKeys {
                     if inputKey != kCIInputImageKey {
-                        let value = filter.valueForKey(inputKey)
+                        let value = filter.value(forKey: inputKey)
                         description += "\(inputKey): \(value != nil ? value! : "<null>")\n"
                     }
                 }

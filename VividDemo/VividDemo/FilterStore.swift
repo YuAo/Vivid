@@ -17,7 +17,7 @@ class FilterStore {
         filters.append(CIFilter(
             name: "YUCIColorLookup",
             withInputParameters:[
-                "inputColorLookupTable": CIImage(contentsOfURL: NSBundle.mainBundle().URLForResource("color_lookup_miss_etikate", withExtension: "png")!)!
+                "inputColorLookupTable": CIImage(contentsOf: Bundle.main.url(forResource: "color_lookup_miss_etikate", withExtension: "png")!)!
             ])
         )
         
@@ -37,7 +37,7 @@ class FilterStore {
         filters.append(CIFilter(
             name: "YUCIStarfieldGenerator",
             withInputParameters:[
-                "inputExtent": CIVector(CGRect: CGRectMake(0, 0, 1200, 800)),
+                "inputExtent": CIVector(cgRect: CGRect(x: 0, y: 0, width: 1200, height: 800)),
                 "inputTime": 0
             ])
         )
@@ -45,7 +45,7 @@ class FilterStore {
         filters.append(CIFilter(
             name: "YUCIBlobsGenerator",
             withInputParameters:[
-                "inputExtent": CIVector(CGRect: CGRectMake(0, 0, 1200, 800)),
+                "inputExtent": CIVector(cgRect: CGRect(x: 0, y: 0, width: 1200, height: 800)),
                 "inputTime": 6.0
             ])
         )
@@ -59,7 +59,7 @@ class FilterStore {
         filters.append(CIFilter(name: "YUCICLAHE"))
         
         filters.append(CIFilter(name: "YUCISkyGenerator", withInputParameters: [
-            "inputExtent": CIVector(CGRect: CGRectMake(0, 0, 1200, 800))
+            "inputExtent": CIVector(cgRect: CGRect(x: 0, y: 0, width: 1200, height: 800))
         ]))
         
         return filters
