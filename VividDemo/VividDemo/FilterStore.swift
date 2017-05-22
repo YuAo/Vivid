@@ -32,6 +32,8 @@ class FilterStore {
         
         filters.append(CIFilter(name: "YUCICrossZoomTransition"))
         
+        filters.append(CIFilter(name: "YUCIFilmBurnTransition"))
+        
         filters.append(CIFilter(name: "YUCIFlashTransition"))
         
         filters.append(CIFilter(

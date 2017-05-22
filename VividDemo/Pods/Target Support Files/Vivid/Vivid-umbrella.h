@@ -1,10 +1,21 @@
+#ifdef __OBJC__
 #import <Cocoa/Cocoa.h>
+#else
+#ifndef FOUNDATION_EXPORT
+#if defined(__cplusplus)
+#define FOUNDATION_EXPORT extern "C"
+#else
+#define FOUNDATION_EXPORT extern
+#endif
+#endif
+#endif
 
 #import "YUCIBilateralFilter.h"
 #import "YUCIBlobsGenerator.h"
 #import "YUCICLAHE.h"
 #import "YUCIColorLookup.h"
 #import "YUCICrossZoomTransition.h"
+#import "YUCIFilmBurnTransition.h"
 #import "YUCIFilterConstructor.h"
 #import "YUCIFilterPreviewGenerator.h"
 #import "YUCIFilterUtilities.h"

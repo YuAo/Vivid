@@ -1,16 +1,16 @@
 PODS:
-  - Vivid (0.5)
+  - Vivid (0.8)
 
 DEPENDENCIES:
   - Vivid (from `../`)
 
 EXTERNAL SOURCES:
   Vivid:
-    :path: "../"
+    :path: ../
 
 SPEC CHECKSUMS:
-  Vivid: cb41984e2004b020b2b3157e2e36c19e365062f1
+  Vivid: 65d28aba89fc750fceda8172c8b233f27d0ac18b
 
 PODFILE CHECKSUM: 8262a662cfffd6453592239c061118e1d2944ea5
 
-COCOAPODS: 1.0.0.beta.3
+COCOAPODS: 1.2.1
