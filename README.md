@@ -129,3 +129,7 @@ An implementation of High Pass Skin Smoothing.
 #### [YUCIImageView](https://github.com/YuAo/YUCIImageView)
 
 An image view for rendering CIImage with Metal/OpenGL/CoreGraphics.
+
+#### [MetalPetal](https://github.com/MetalPetal/MetalPetal)
+
+A image processing framework based on Metal.
